@@ -12,20 +12,19 @@ import javax.persistence.Table;
 @DynamicUpdate
 @Table(name = "datadic", schema = "rbac", catalog = "")
 public class DataDicEntity {
-    private Integer dicId;
+    private Integer id;
     private String keyword;
     private Integer ddCode;
     private String ddName;
 
     @Id
-    public Integer getDicId() {
-        return dicId;
+    public Integer getId() {
+        return id;
     }
 
-    public void setDicId(Integer dicId) {
-        this.dicId = dicId;
+    public void setId(Integer id) {
+        this.id = id;
     }
-
     public String getKeyword() {
         return keyword;
     }

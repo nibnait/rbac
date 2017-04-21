@@ -16,20 +16,21 @@ import java.util.Date;
 public class UserEntity {
     private Integer id;
     private String name;
-    private Integer roleId;
+    private String roleName;
     private String logName;
     private String password;
     private String workNo;
     private String email;
     private String address;
-    private LocalDateTime birthday;
+    private Date birthday;
     private String sex;
-    private String buId;
+    private String buName;
     private String idnum;
     private String image;
-    private String position;
     private String phoneNum;
-    private LocalDateTime registerTime;
+    private Date registerTime;
+    private Integer roleId;
+    private Integer buId;
 
     @Id
     public Integer getId() {
@@ -40,6 +41,22 @@ public class UserEntity {
         this.id = id;
     }
 
+    public Integer getRoleId() {
+        return roleId;
+    }
+
+    public void setRoleId(Integer roleId) {
+        this.roleId = roleId;
+    }
+
+    public Integer getBuId() {
+        return buId;
+    }
+
+    public void setBuId(Integer buId) {
+        this.buId = buId;
+    }
+
     public String getName() {
         return name;
     }
@@ -48,12 +65,12 @@ public class UserEntity {
         this.name = name;
     }
 
-    public Integer getRoleId() {
-        return roleId;
+    public String getRoleName() {
+        return roleName;
     }
 
-    public void setRoleId(Integer roleId) {
-        this.roleId = roleId;
+    public void setRoleName(String roleName) {
+        this.roleName = roleName;
     }
 
     public String getLogName() {
@@ -96,11 +113,11 @@ public class UserEntity {
         this.address = address;
     }
 
-    public LocalDateTime getBirthday() {
+    public Date getBirthday() {
         return birthday;
     }
 
-    public void setBirthday(LocalDateTime birthday) {
+    public void setBirthday(Date birthday) {
         this.birthday = birthday;
     }
 
@@ -112,12 +129,12 @@ public class UserEntity {
         this.sex = sex;
     }
 
-    public String getBuId() {
-        return buId;
+    public String getBuName() {
+        return buName;
     }
 
-    public void setBuId(String buId) {
-        this.buId = buId;
+    public void setBuName(String buName) {
+        this.buName = buName;
     }
 
     public String getIdnum() {
@@ -136,14 +153,6 @@ public class UserEntity {
         this.image = image;
     }
 
-    public String getPosition() {
-        return position;
-    }
-
-    public void setPosition(String position) {
-        this.position = position;
-    }
-
     public String getPhoneNum() {
         return phoneNum;
     }
@@ -152,11 +161,11 @@ public class UserEntity {
         this.phoneNum = phoneNum;
     }
 
-    public LocalDateTime getRegisterTime() {
+    public Date getRegisterTime() {
         return registerTime;
     }
 
-    public void setRegisterTime(LocalDateTime registerTime) {
+    public void setRegisterTime(Date registerTime) {
         this.registerTime = registerTime;
     }
 }

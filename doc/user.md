@@ -1,7 +1,13 @@
 ## 我的账户
 
 ### 根据userId获取个人信息
-#### URL:/api/user/{userId}
+#### URL:/api/user
+#### 参数列表：
+
+参数名|类型|必选|说明
+-----|---|----|---|
+userId|Integer|√|userId
+
 #### 请求方式：GET
 #### 参数列表：无
 #### 返回示例：
@@ -9,26 +15,53 @@
 {
   "status": 0,
   "data": {
-    "userId": "1",
+    "name": "root",
+    "roleName": "",
+    "logName": "admin",
+    "workNo": "",
+    "email": "",
     "address": "",
     "birthday": "",
-    "email": "",
+    "sex": "",
+    "buName": "",
     "idnum": "",
     "image": "",
-    "nickname": "",
-    "phone": "15129076522",
-    "realname": "",
-    "registertime": "2017-04-02 15:48:13",
-    "role": 2,
-    "province": "",
-    "city": "",
-    "town": "",
-    "job": "",
-    "sex": "",
-    "balance": 0.0
+    "phoneNum": "",
+    "registerTime": ""
   }
 }
 ```
+
+### 根据userId获取可以修改的信息的列表
+#### URL：/api/user/checkPermission
+#### 请求方式：GET
+#### 参数列表：
+
+参数名|类型|必选|说明
+-----|---|----|---|
+userId|String|√|用户id
+
+#### 返回实例：
+```
+{
+  "status": 0,
+  "data": {
+    "permissionMap": {
+      "birthday": 1,
+      "image": 1,
+      "password": 1,
+      "address": 1,
+      "sex": 1,
+      "name": 0,
+      "roleName": 0,
+      "phoneNum": 1,
+      "idnum": 0,
+      "buName": 0
+    }
+  }
+}
+```
+
 
 ### 修改个人信息
 #### URL：/api/user/update
@@ -38,21 +71,16 @@
 参数名|类型|必选|说明
 -----|---|----|---|
 userId|String|√|用户id
-email|String|可选|邮箱
-sex|String|可选|性别
+name|String|可选|真实姓名
+password|String|可选|登录密码
 birthday|String|可选|出生日期
 idnum|String|可选|身份证号
-nickname|String|可选|昵称
-newPassword|String|可选|登录密码
-realname|String|可选|真实姓名
-province|String|可选|省份
-city|String|可选|城市
-town|String|可选|区县
 address|String|可选|详细地址
-job|String|可选|职业
-newLoginPassword|String|可选|登录密码
-transpwd|String|可选|交易密码
-balance|String|可选|充值金额
+sex|String|可选|性别
+buName|String|可选|部门名称
+phoneNum|String|可选|手机号
+roleName|String|可选|职位
+image|String|可选|头像
 
 #### 返回实例：
 ```
@@ -67,8 +95,50 @@ balance|String|可选|充值金额
 }
 ```
 
-### 获取所有省份信息
-#### URL:/api/user/province
+### 上传头像
+#### URL：/api/user/uploadHeadImage
+#### 请求方式：GET
+#### 参数列表：
+
+参数名|类型|必选|说明
+-----|---|----|---|
+userId|String|√|用户id
+fileBase64|String|√|图片文件的base64编码
+
+#### 返回实例：
+```
+{
+  "status": 0,
+  "data": {
+     "url":"xxx"
+  }
+}
+
+{
+  "status": -202,
+  "msg": "用户不存在"
+}
+```
+
+## 联系人模块
+
+### 添加员工信息
+#### URL：/api/user/addUser
+#### 请求方式：GET
+#### 参数列表：
+
+参数名|类型|必选|说明
+-----|---|----|---|
+userId|String|√|用户id
+
+#### 返回示例：
+```
+
+```
+
+
+### 获取公司所有人的公开信息
+#### URL：/api/user/getAllContact
 #### 请求方式：GET
 #### 参数列表：无
 #### 返回示例：
@@ -77,71 +147,55 @@ balance|String|可选|充值金额
   "status": 0,
   "data": [
     {
-      "code": "110000",
-      "name": "北京市"
+      "buName": "人力资源",
+      "userInfoList": [
+        {
+          "name": "root",
+          "roleName": "",
+          "logName": "admin",
+          "workNo": "",
+          "email": "",
+          "address": "",
+          "birthday": "",
+          "sex": "",
+          "buName": "",
+          "idnum": "",
+          "image": "",
+          "phoneNum": "",
+          "registerTime": ""
+        }
+      ]
     },
     {
-      "code": "120000",
-      "name": "天津市"
+      "buName": "技术部",
+      "userInfoList": [
+        {
+          "name": "吴方兵",
+          "roleName": "",
+          "logName": "wfb",
+          "workNo": "",
+          "email": "",
+          "address": "",
+          "birthday": "",
+          "sex": "",
+          "buName": "",
+          "idnum": "",
+          "image": "",
+          "phoneNum": "",
+          "registerTime": ""
+        }
+      ]
+    },
+    {
+      "buName": "运营部",
+      "userInfoList": []
+    },
+    {
+      "buName": "销售部",
+      "userInfoList": []
     }
   ]
 }
-```
 
-### 根据provinceCode 获取此省份下的所有城市列表
-#### URL:/api/user/city
-#### 请求方式：GET
-#### 参数列表：
-参数名|类型|必选|说明
------|---|----|---|
-code|String|√|省份代码
-#### 返回示例：
 ```
-{
-  "status": 0,
-  "data": [
-    {
-      "code": "130100",
-      "name": "石家庄市"
-    },
-    {
-      "code": "130200",
-      "name": "唐山市"
-    },
-    {
-      "code": "130300",
-      "name": "秦皇岛市"
-    }
-  ]
-}
-```
-
-### 根据cityCode 获取此城市下的所有区县列表
-#### URL:/api/user/town
-#### 请求方式：GET
-#### 参数列表：
-参数名|类型|必选|说明
------|---|----|---|
-code|String|√|城市代码
-#### 返回示例：
-```
-{
-  "status": 0,
-  "data": [
-    {
-      "code": "110101",
-      "name": "东城区"
-    },
-    {
-      "code": "110102",
-      "name": "西城区"
-    },
-    {
-      "code": "110103",
-      "name": "崇文区"
-    }
-  ]
-}
-```
-
 

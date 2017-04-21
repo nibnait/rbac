@@ -8,13 +8,7 @@ import java.util.List;
 @Component
 public class DataDicDao extends HibernateBaseDao<DataDicEntity> {
     public DataDicDao() {
-        super(DataDicEntity.class, "dicId");
+        super(DataDicEntity.class, "id");
     }
 
-
-    public List<DataDicEntity> getAllTags() {
-        ensureSession();
-        return session.createQuery("from DataDicEntity where keyword = '项目标签'")
-                .list();
-    }
 }

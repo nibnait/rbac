@@ -1,38 +1,62 @@
 package com.wfb.rbac.api.resultModel.user;
 
+import java.time.LocalDateTime;
+import java.util.Date;
+
 public class UserInfo {
-    private String userId;
+    private Integer id;
+    private String name;
+    private String roleName;   //角色名称
+    private String logName;
+    private String workNo;
+    private String email;
     private String address;
     private String birthday;
-    private String email;
+    private String sex;
+    private String buName;      //部门名称
     private String idnum;
     private String image;
-    private String nickname;
-    private String phone;
-    private String realname;
-    private String registertime;
-    private Integer role;
-    private String province;
-    private String city;
-    private String town;
-    private String job;
-    private String sex;
-    private double balance;
+    private String phoneNum;
+    private String registerTime;    //入职时间
 
-    public double getBalance() {
-        return balance;
+    public Integer getId() {
+        return id;
     }
 
-    public void setBalance(double balance) {
-        this.balance = balance;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public String getUserId() {
-        return userId;
+    public String getName() {
+        return name;
     }
 
-    public void setUserId(String userId) {
-        this.userId = userId;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getLogName() {
+        return logName;
+    }
+
+    public void setLogName(String logName) {
+        this.logName = logName;
+    }
+
+    public String getWorkNo() {
+        return workNo;
+    }
+
+    public void setWorkNo(String workNo) {
+        this.workNo = workNo;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getAddress() {
@@ -51,12 +75,28 @@ public class UserInfo {
         this.birthday = birthday;
     }
 
-    public String getEmail() {
-        return email;
+    public String getSex() {
+        return sex;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+
+    public String getRoleName() {
+        return roleName;
+    }
+
+    public void setRoleName(String roleName) {
+        this.roleName = roleName;
+    }
+
+    public String getBuName() {
+        return buName;
+    }
+
+    public void setBuName(String buName) {
+        this.buName = buName;
     }
 
     public String getIdnum() {
@@ -75,83 +115,19 @@ public class UserInfo {
         this.image = image;
     }
 
-    public String getNickname() {
-        return nickname;
+    public String getPhoneNum() {
+        return phoneNum;
     }
 
-    public void setNickname(String nickname) {
-        this.nickname = nickname;
+    public void setPhoneNum(String phoneNum) {
+        this.phoneNum = phoneNum;
     }
 
-    public String getPhone() {
-        return phone;
+    public String getRegisterTime() {
+        return registerTime;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
-    public String getRealname() {
-        return realname;
-    }
-
-    public void setRealname(String realname) {
-        this.realname = realname;
-    }
-
-    public String getRegistertime() {
-        return registertime;
-    }
-
-    public void setRegistertime(String registertime) {
-        this.registertime = registertime;
-    }
-
-    public Integer getRole() {
-        return role;
-    }
-
-    public void setRole(Integer role) {
-        this.role = role;
-    }
-
-    public String getProvince() {
-        return province;
-    }
-
-    public void setProvince(String province) {
-        this.province = province;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
-
-    public String getTown() {
-        return town;
-    }
-
-    public void setTown(String town) {
-        this.town = town;
-    }
-
-    public String getJob() {
-        return job;
-    }
-
-    public void setJob(String job) {
-        this.job = job;
-    }
-
-    public String getSex() {
-        return sex;
-    }
-
-    public void setSex(String sex) {
-        this.sex = sex;
+    public void setRegisterTime(String registerTime) {
+        this.registerTime = registerTime;
     }
 }

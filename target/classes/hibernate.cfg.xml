@@ -29,5 +29,9 @@
         <!-- 添加映射 -->
         <mapping class="com.wfb.rbac.db.entity.UserEntity"/>
         <mapping class="com.wfb.rbac.db.entity.DataDicEntity"/>
+        <mapping class="com.wfb.rbac.db.entity.DepartmentEntity"/>
+        <mapping class="com.wfb.rbac.db.entity.PrivilegeEntity"/>
+        <mapping class="com.wfb.rbac.db.entity.PrivilegeUserEntity"/>
+        <mapping class="com.wfb.rbac.db.entity.RoleEntity"/>
     </session-factory>
 </hibernate-configuration>

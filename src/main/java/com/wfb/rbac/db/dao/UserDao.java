@@ -10,7 +10,7 @@ import java.util.List;
 @Component
 public class UserDao extends HibernateBaseDao<UserEntity> {
     public UserDao(){
-        super(UserEntity.class, "userId");
+        super(UserEntity.class, "id");
     }
 
 }
