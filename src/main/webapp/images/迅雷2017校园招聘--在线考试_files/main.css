@@ -1,0 +1,368 @@
+/*****
+* define css for all pages
+* edit by: phim
+* contact with Twitter:@PhimerCH
+* just for frame
+*****/
+
+textarea.inputviewBox:focus { outline: 1px solid #2cbfde; }
+
+.noticeTips.forall { position: fixed;top: 50%; right: 0px; z-index: 999;margin-top: -144px;}
+.noticeTips.forall ul { float: left; }
+.noticeTips.forall ul li.mianli { padding: 4px 10px 4px 10px; border-radius: 5px; box-shadow: 3px 3px 3px #ccc; color: white; position: relative; float: right; clear: both; z-index: 999999; margin-right: 20px; font-size: 14px; width: 34px; }
+.forcode .noticeTips.forall ul li.mianli { width: 75px; position: relative; clear: initial; z-index: 999999; }
+.noticeTips.forall ul li.mianli i.fa { font-size: 16px; height: 30px; line-height: 30px; text-align: center; }
+.noticeTips.forall ul li.mianli i.tip { font-size: 12px; position: absolute; right: 5px; top: 2px; }
+
+.noticeTips.forall ul li.mianli span.im { display: none; }
+.forcode .noticeTips.forall { bottom: 43px; position: fixed; width: 200px; left: 20px; top: auto; }
+
+.noticeTips.forall ul li.immMessage { background: #2cbfde; }
+.noticeTips.forall ul li.showqa { display: none; }
+.noticeTips.forall ul li.onlineRefer { background: #FF8A00; top: 20px; }
+.forcode .noticeTips.forall ul li.onlineRefer { background: #FF8A00; top: 0px; }
+.qnum { font-size: 14px; height: 36px !important; padding: 7px 0; width: 50px !important; }
+.qnum.hadAnstrue { border: 2px solid #2cbfde !important; box-shadow: 0 1px 2px #2cbfde; background: #2cbfde; color: white; }
+.qnum.nowAnstrue { border: 2px solid #ffa400 !important; box-shadow: 0 1px 2px #ffa400; background: #FF8A00; color: white; }
+.form-horizontal .control-label { font-size: 14px; }
+.header .nav > li > a { padding: 0px; }
+.header .nav > li.textName > a { cursor: default; }
+.header .nav > li > a:hover, .header .nav > li > a:focus { background: none; }
+.mainbody .innerInfo .helptip { font-size: 14px; position: absolute; top: 200px; right: 100px; width: 200px; }
+.mainbody .innerInfo .helptip .left { float: left; width: 20%; text-align: left; }
+.mainbody .innerInfo .helptip .right { float: left; width: 100%; text-align: left; line-height: 45px; }
+.mainbody .innerInfo .helptip .right i.fa.fa-info-circle { color: #FF8A00; font-size: 24px; position: relative; top: 4px; }
+.mainbody .innerInfo .helptip .right i.fa.fa-question-circle { color: #FF8A00; font-size: 24px; position: relative; top: 4px; }
+.mainbody .innerInfo .helptip .tooltip-inner { text-align: left; width: 350px; max-width: 350px; }
+.mainbody .innerInfo .lowtime { font-size: 14px; position: absolute; top: 130px; left: 50px; width: 200px; display:; text-align: left; }
+.mainbody .innerInfo .lowtime .strong { font-weight: bold; }
+
+.noticeTips.forall .MessageBox { width: 350px; min-height: 100px; background: rgba(255, 255, 255, 1); border: 2px solid #2cbfde; position: absolute; color: #333; display: none; }
+.noticeTips.forall .immMessage .tip { width: auto; padding: 0px 5px; border-radius: 10px; background: rgba(218,96,96,1); color: #fff; font-style: normal; }
+.noticeTips.forall .onlineRefer .tip { width: auto; padding: 0px 5px; border-radius: 10px; background: rgba(218,96,96,1); color: #ffffff; font-style: normal; }
+.noticeTips.forall .immMessage .MessageBox { bottom: 0px; right: 40px; position: absolute; }
+.noticeTips.forall .onlineRefer .MessageBox { right: 40px; top: 0px; position: absolute; }
+
+.forcode .noticeTips.forall .onlineRefer .MessageBox { left: 0px; right: initial; bottom: 43px; top: initial; }
+.forcode .noticeTips.forall .immMessage .MessageBox { left: 0px; right: initial; bottom: 43px; top: initial; }
+
+.noticeTips.forall .MessageBox ul { float: left; line-height: 25px; font-weight: normal; padding: 0px 10px; width: 100%; }
+.noticeTips.forall .immMessage .MessageBox ul { padding: 0px 0px 0px 0px; height: 200px; overflow-y: scroll; }
+.noticeTips.forall .immMessage .MessageBox ul li { padding: 0px 10px 0px 30px; background: url(../images/li-left.png) no-repeat 14px 8px; cursor: default; }
+.noticeTips.forall .immMessage .MessageBox ul li:nth-child(2n+1) { }
+.noticeTips.forall .MessageBox ul li .time { color: #2cbfde; font-weight: bold; }
+.noticeTips.forall .MessageBox .toolguider { font-size: 14px; text-align: right; clear: both; width: 100%; padding: 2px 8px 2px; background: #2cbfde; color: #fff; }
+.noticeTips.forall .onlineRefer .MessageBox .toolguider { background: #FF8A00; }
+.noticeTips.forall .MessageBox .toolguider i { transition: all 0.2s linear 0s; }
+.noticeTips.forall .MessageBox .toolguider i:hover { transform: rotate(180deg); }
+.noticeTips.forall ul li.mianli .toolguider i.fa { font-size: 20px; cursor: pointer; }
+
+.noticeTips.forall .immMessage .MessageBox ul li { margin-bottom: 20px; }
+.noticeTips.forall .onlineRefer .MessageBox { width: 350px; border: 2px solid #FF8A00; }
+.noticeTips.forall .onlineRefer .MessageBox .InfoBox { border: 0 none; color: #333; height: 170px; border-radius: 5px; border-bottom: 1px solid #ccc; color: #fff; padding: 0px 20px; padding-bottom: 10px; padding-top: 10px; overflow-y: scroll; cursor: default; }
+.noticeTips.forall .onlineRefer .MessageBox .InfoBox li { line-height: 20px; padding: 5px 10px; }
+.noticeTips.forall .onlineRefer .MessageBox .InputBox { padding: 0px 20px 5px; }
+
+.noticeTips.forall .onlineRefer .MessageBox .InputBox .messtype { width: 100%; min-height: 30px; position: relative; line-height: 30px; }
+.noticeTips.forall .onlineRefer .MessageBox .InputBox .messtype ul { display: none; position: absolute; bottom: 30px; left: -10px; width: auto; }
+.noticeTips.forall .onlineRefer .MessageBox .InputBox .messtype ul li { color: white; background: rgba(0,0,0,0.8); padding: 2px 15px; cursor: pointer; }
+.noticeTips.forall .onlineRefer .MessageBox .InputBox .messtype ul li:hover { background: rgba(0,0,0,0.6); }
+.noticeTips.forall .onlineRefer .MessageBox .InputBox .messtype:hover ul { display: inherit; }
+
+.noticeTips.forall .onlineRefer .MessageBox .inputviewBox { background: #dedede; border: 0 none; color: #333; height: 50px; padding: 5px 10px; width: 245px; resize: none; }
+.noticeTips.forall .onlineRefer .MessageBox .InputBox .btn { margin-left: 10px; cursor: pointer; background: #FF8A00; border: 1px solid #FF8A00; }
+input.btn.focus, input.btn:focus, input.btn:hover { color: white; }
+
+.modal-header { display: none; }
+.modal-body { color: #FF8A00; font-size: 18px; font-weight: bold; text-align: center; }
+.modal-body .foriframe { position: absolute; width: 100%; height: 100%; z-index: 0; }
+.alert-danger { background: none; border: none; color: #FF8A00; }
+.modal-footer { border: none; text-align: center; }
+.modal-footer .btn { float: none; -moz-user-select: none; border: 1px solid transparent; border-radius: 0; cursor: pointer; display: inline-block; font-size: 14px; font-weight: 400; line-height: 1.42857; margin-bottom: 0; padding: 6px 12px; text-align: center; vertical-align: middle; white-space: nowrap; background: #2cbfde none repeat scroll 0 0; color: white; width: 110px; }
+.modal-content { border-radius: 0px; box-shadow: none; }
+.modal.fade .modal-dialog { border: 8px solid rgba(0, 0, 0, 0.6); background: #f3f6fa; }
+.modal-dialog .modal-content { border-radius: 0px; }
+.btn-main { box-shadow: 0 2px 5px rgba(0, 28, 88, 0.3); color: #fff; }
+
+.mainbody.forall { background: #F8F9FB; }
+.smallScreen { display: none; position: absolute; top: 0px; left: 0px; height: 50%; padding-top: 50%; text-align: center; width: 100%; background: #fff; z-index: 999999; }
+.infoview .left { padding: 0px 10%; }
+.infoview .fa-close { position: absolute; right: 0px; bottom: 40%; }
+.exammiddle img.cke_reset { display: none; }
+
+/**** 首页 ****/
+.index .mainbody { background: #fff; }
+
+.header .logoindex { padding: 0px 20px 0px 0px; float: left; height: 60px; position: relative; }
+.header .logoindex span { border-left: 1px solid rgba(255,255,255,0.5); font-size: 16px; height: 25px; line-height: 25px; margin: 0 5px; padding: 0 20px; position: absolute; top: 18px; width: 200px; }
+.header .indexcontact { width: auto; float: right; font-size: 14px; }
+.header .indexcontact i { width: 26px; height: 26px; border-radius: 13px; border: 2px solid #fff; font-size: 22px; line-height: 26px; text-align: center; position: relative; top: 4px; margin-right: 3px; }
+.header .indexcontact i.fa-user { margin-left: 20px; }
+
+.index .header.forall ul li.spe { padding-left: 3px; }
+
+.header.forall ul li { padding: 0 20px; border-right: 1px solid rgba(255,255,255,0.5); height: 25px; line-height: 25px; margin-top: 18px; }
+.header.forall ul li a { color: #fff; }
+.header.forall ul li a:hover { color: rgba(255,255,255,0.6); }
+.header.forall ul li:first-child { padding-right: 0px; border-right: none; }
+.header.forall ul li.spe a { color: #FF8A00; font-weight: bold; }
+
+
+.index .mainbody .innerInfo { position: relative; top: 100px; height: calc(100% - 200px); }
+.index .mainbody .innerInfo .pcexam { width: 480px; float: left; min-height: 200px; }
+.index .mainbody .innerInfo .mobileexam { width: 480px; float: right; min-height: 200px; }
+.index .mainbody .innerInfo .pcexam .title { height: 40px; line-height: 40px; font-size: 35px; font-weight: bold; margin-bottom: 20px; color: #2cbfde; }
+.index .mainbody .innerInfo .pcexam .info { min-height: 400px; background: #f2f2f2; padding: 0px 0px 20px 0px; border-radius: 5px; }
+.index .mainbody .innerInfo .mobileexam .title { height: 40px; line-height: 40px; font-size: 35px; font-weight: bold; margin-bottom: 20px; color: #FF8A00; }
+.index .mainbody .innerInfo .mobileexam .info { min-height: 400px; background: #f2f2f2; padding: 0px 0px 20px 0px; border-radius: 5px; }
+.index .mainbody .innerInfo .mobileexam .title i { font-size: 40px; position: relative; top: 2px; }
+
+.index .mainbody .innerInfo .pcexam .info .info1 { padding: 0px 0px 0px 0px; clear: both; text-align: center; background: #0cd0ff; line-height: 50px; height: 50px; }
+.index .mainbody .innerInfo .pcexam .info .info1 span.text { font-size: 18px; color: white; font-weight: bold; }
+.index .mainbody .innerInfo .pcexam .info .info2 .tip { height: 50px; line-height: 50px; font-size: 16px; text-align: center; margin-bottom: 50px; }
+.index .mainbody .innerInfo .pcexam .info .info2 .tip .start { font-size: 30px; color: #FF8A00; }
+.index .mainbody .innerInfo .pcexam .info .info2 { clear: both; margin-top: 30px; padding: 0px 30px; }
+.index .mainbody .innerInfo .pcexam .info .info2 .camera { width: 200px; background: #0cd0ff url(../images/camera.png) no-repeat 30px 15px; color: white; float: left; text-align: center; padding: 15px 0px 15px 20px; cursor: pointer; font-size: 20px; font-weight: bold; }
+.index .mainbody .innerInfo .pcexam .info .info2 .camera:hover { opacity: 0.8; }
+.index .mainbody .innerInfo .pcexam .info .info2 .nocamera { width: 200px; background: #FF8A00 url(../images/nocamera.png) no-repeat 30px 15px; color: white; float: right; text-align: center; padding: 15px 0px 15px 20px; cursor: pointer; font-size: 20px; font-weight: bold; }
+.index .mainbody .innerInfo .pcexam .info .info2 .nocamera:hover { opacity: 0.8; }
+.index .mainbody .innerInfo .pcexam .info .info3 { clear: both; margin-top: 30px; padding: 0px 0px 0px 20px; font-size: 14px; color: #666; text-align: center; margin-top: 50px; }
+
+.index .mainbody .innerInfo .mobileexam .info .info1 { padding: 0px 0px 0px 0px; clear: both; text-align: center; background: #FF8A00; line-height: 50px; height: 50px; }
+.index .mainbody .innerInfo .mobileexam .info .info1 span.text { font-size: 18px; color: white; font-weight: bold; }
+.index .mainbody .innerInfo .mobileexam .info .info2 { clear: both; margin-top: 60px; padding: 0 19px; text-align: center; }
+.index .mainbody .innerInfo .mobileexam .info .info3 { clear: both; margin-top: 40px; padding: 0px 0px 0px 20px; font-size: 14px; color: #666; text-align: center; }
+
+/**** 登录 ****/
+.loginform { position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; min-height: 200px; min-width: 200px; background: #2cbfde; }
+.loginform .loginlogo { width: 665px; height: 40px; line-height: 40px; margin: 0px auto 0px; padding-top: 150px; padding-bottom: 60px; background: url(../images/login-top.png) no-repeat 350px bottom; box-sizing: content-box; }
+.loginform .loginlogo span { float: right; text-align: right; height: 30px; padding-right: 0px; font-size: 20px; color: #fff; }
+.loginform .mainform { width: 665px; min-height: 300px; margin: -40px auto 0px; border-radius: 5px; position: relative; border: 8px solid rgba(0,0,0,0.3); }
+.loginform .mainform .wrapper { background: #fff; padding: 50px 0; }
+.loginform .mainform .main { border-right: 1px solid #ccd1d9; padding: 0 56px 0 46px; width: 426px; }
+.loginform .mainform .form-icon i { color: #ccd1d9; font-size: 17px; left: 8.5px; line-height: 30px; position: absolute; text-align: center; top: 2px; width: 30px; z-index: 20; }
+.loginform .mainform .submain { position: absolute; right: 0; text-align: center; top: 50px; width: 220px; }
+.loginform .mainform .form-icon { position: relative; }
+.loginform .mainform .form-lg .form-control-feedback, .loginform .mainform .form-lg .form-control { font-size: 16px; height: 46px; overflow-y: hidden; padding-bottom: 0; padding-top: 0; }
+.loginform .mainform .form-lg .form-control-feedback { margin-top: 8px; top: 0; }
+.loginform .mainform .form-lg .form-control-feedback, .loginform .mainform .form-lg .form-control { font-size: 16px; height: 46px; overflow-y: hidden; padding-bottom: 0; padding-top: 0; }
+.loginform .mainform .form-icon .form-control, .loginform .mainform .text-error { padding-left: 40px; }
+.loginform .mainform .text-error { line-height: 24px; }
+.loginform .mainform .form-icon i.fa-lock { font-size: 22px; }
+label { display: inline-block; font-weight: 700; margin-bottom: 5px; max-width: 100%; }
+label.check-box, label.check-box > .btn { background: rgba(0, 0, 0, 0) none repeat scroll 0 0; border-color: transparent; box-shadow: none; color: #656d78; font-weight: 400; padding: 0; }
+label.check-box .check-icon, label.check-box > .btn .check-icon { line-height: 20px; }
+.fa-stack { display: inline-block; height: 2em; line-height: 2em; position: relative; vertical-align: middle; width: 2em; cursor: pointer; }
+label.check-box .check-icon > i { color: #2cbfde; transition: opacity 0.15s ease-in-out 0s, color 0.15s ease-in-out 0s; }
+label.check-box .check { display: inline-block; font-size: 20px; height: 20px; line-height: 20px; opacity: 0; }
+.btn, .btn-primary { background: #2cbfde; border-color: #2cbfde; font-weight: bold; }
+.btn-primary:hover { background: #39B4EF; opacity: 0.8; border-color: #39B4EF; }
+.btn:hover { opacity: 0.8; }
+.editorbanner .line1 { height: 60px; overflow: hidden; }
+
+a.btn-link { border-radius: 0; color: #428bca; font-weight: 400; }
+a.btn-link, a.btn-link.active, a.btn-link.disabled, a.btn-link:active, a.btn-link:focus, a.btn-link:hover, a.btn-link[disabled] { background-color: transparent; border-color: transparent; box-shadow: none; color: #009ee7; text-decoration: none; }
+.has-error .form-control { border-color: #a94442; box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset; }
+.has-error .text-error { color: #ed5565; }
+label.check-box.active .check, label.check-box > .active .check { opacity: 1; }
+.loginform .submain .circle { border: 4px solid #ccc; border-radius: 50px; height: 100px; width: 100px; line-height: 100px; clear: both; font-size: 60px; color: #ccc; }
+.loginform .submain a.unl { text-decoration: underline; }
+.logininfo .form-control { width: auto; margin-top: 3px; }
+
+/**** leave page ****/
+.leavepage1 { position: absolute; top: 0px; left: 0px; width: 800px; height: 400px; min-height: 200px; min-width: 200px; background: #E3EFBD; overflow: hidden; }
+.leavepage1 .info { width: 100%; height: 100%; background: #e3efbd url("../images/leavebg1.jpg") no-repeat 70px 50px; margin: 0px auto; position: relative; z-index: 99; }
+.leavepage1 .info .mess { padding-left: 300px; text-align: left; padding-top: 100px; width: 1000px; margin: 0px auto; }
+.leavepage1 .info .mess .line1 { font-size: 40px; color: #739F00; line-height: 50px; }
+.leavepage1 .info .mess .line2 { line-height: 30px; font-weight: bold; font-size: 20px; margin-top: 20px; }
+.leavepage1 .info .mess .line2 span { font-size: 35px; color: red; }
+.leavepage1 .info .mess .line3 { line-height: 30px; margin-top: 20px; font-size: 16px; margin-bottom: 20px; }
+.leavepage1 .info .mess .line4 a { color: white; padding: 10px 30px; border-radius: 0px; }
+
+.leavepage5 { position: absolute; top: 0px; left: 0px; width: 800px; height: 400px; min-height: 200px; min-width: 200px; background: #FFF7D0; overflow: hidden; }
+.leavepage5 .info { width: 100%; height: 100%; background: #fff7d0 url("../images/leavebg5.jpg") no-repeat scroll 100px 50px; margin: 0px auto; position: relative; z-index: 99; }
+.leavepage5 .info .mess { padding-left: 350px; text-align: left; padding-top: 100px; margin: 0px auto; }
+.leavepage5 .info .mess .line1 { font-size: 40px; color: #739F00; line-height: 50px; }
+.leavepage5 .info .mess .line2 { line-height: 30px; font-weight: bold; font-size: 20px; margin-top: 20px; }
+.leavepage5 .info .mess .line2 span { font-size: 35px; color: red; }
+.leavepage5 .info .mess .line3 { line-height: 30px; margin-top: 20px; font-size: 16px; margin-bottom: 20px; }
+.leavepage5 .info .mess .line4 a { color: white; padding: 10px 30px; border-radius: 0px; }
+
+.noticeTips.forall .MessageBox .toolguider .fa-close { font-size: 18px; }
+.form-control:focus { border-color: #2cbfde; outline: 0; -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6); box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6); }
+
+/**** endexam page ****/
+.endexampage { position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; min-height: 200px; min-width: 200px; background: #C9F6FC; overflow: hidden; }
+.endexampage .info { width: 100%; height: 100%; background: #C9F6FC url(../images/endexambg.jpg) no-repeat center 50px; margin: 0px auto; position: relative; z-index: 99; }
+.endexampage .info .mess { padding-left: 400px; text-align: left; padding-top: 230px; margin: 0px auto; width: 1000px; }
+.endexampage .info .mess .line1 { font-size: 40px; color: #0090B5; line-height: 50px; }
+.endexampage .info .mess .line2 { line-height: 30px; font-weight: bold; font-size: 20px; margin-top: 20px; }
+.endexampage .info .mess .line2 span { font-size: 35px; color: red; }
+.endexampage .info .mess .line3 { line-height: 30px; margin-top: 20px; font-size: 18px; margin-bottom: 20px; line-height: 35px; }
+
+/**** before exam step1 ****/
+.mainbody.forall .innerInfo { padding-bottom: 80px; }
+.mainbody.forall .innerInfo .stepinfo .mainBox { box-shadow: 1px 1px 1px rgba(200,200,200,0.1); background: #fff; }
+.mainbody.forall .innerInfo .stepinfo { float: left; width: 100%; margin-bottom: 100px; }
+.mainbody.forall .innerInfo .stepinfo .list { clear: both; padding-bottom: 10px; height: 74px; padding-top: 15px; margin-top: 5px; }
+.mainbody.forall .innerInfo .stepinfo .list ul li { float: left; text-align: center; font-size: 16px; width: 250px; position: relative; }
+.mainbody.forall .innerInfo .stepinfo .list ul li:last-child { margin-right: 0px; float: right; }
+.mainbody.forall .innerInfo .stepinfo .list ul li span { color: #ccc; padding: 0px 7px; margin-right: 8px; height: 16px; line-height: 16px; font-size: 45px; border-radius: 16px; font-family: Haettenschweiler; }
+.mainbody.forall .innerInfo .stepinfo .list ul li div { padding: 0px 0px 10px; color: #ccc; }
+.mainbody.forall .innerInfo .stepinfo .list ul li.cur span, .mainbody.forall .innerInfo .stepinfo .list ul li.cur div, .mainbody.forall .innerInfo .stepinfo .list ul li:hover span, .mainbody.forall .innerInfo .stepinfo .list ul li:hover div { color: #2cbfde; }
+.mainbody.forall .innerInfo .stepinfo .list ul li .guider-line { width: 120px; position: absolute; top: -1px; right: -60px; height: 1px; border-bottom: 1px solid #ddd; }
+.mainbody.forall .innerInfo .stepinfo .list ul li:hover div, .mainbody.forall .innerInfo .stepinfo .list ul li.cur div { font-weight: bold; }
+
+.mainbody.forall .innerInfo .stepinfo .tip { background: #fff; padding: 20px 0px 10px; }
+.mainbody.forall .innerInfo .stepinfo .tip .title { margin: 0px 150px; text-align: center; line-height: 35px; font-size: 16px; color: #FF8A00; clear: both; padding: 5px 0px; border: 1px dashed #FF8A00; background: #FFF9F9; }
+.mainbody.forall .innerInfo .stepinfo .stepform { background: #fff; min-height: 300px; padding: 10px 50px 10px; }
+.mainbody.forall .innerInfo .stepinfo .stepform.step1 { padding-left: 200px; }
+.mainbody.forall .innerInfo .stepinfo .stepform table { width: 100%; line-height: 30px; }
+.mainbody.forall .innerInfo .stepinfo .stepform table tr td.left { width: 20%; text-align: right; background: none; padding: 5px 0px 5px 20px; font-weight: bold; font-size: 14px; }
+.mainbody.forall .innerInfo .stepinfo .stepform table tr td.right { width: 80%; background: none; padding: 5px 20px 5px 20px; }
+.mainbody.forall .innerInfo .stepinfo .stepform table tr td.right input[type="text"] { width: 200px; padding: 6px 15px; border: 1px solid #ccc; height: 32px; font-size: 14px; }
+.mainbody.forall .innerInfo .stepinfo .stepform table tr td.right label { margin-right: 20px; font-size: 14px; color: #666; font-weight: normal; }
+.mainbody.forall .innerInfo .stepinfo .toolguider { text-align: center; }
+.mainbody.forall .innerInfo .stepinfo .toolguider .bottom { height: 39px; vertical-align: bottom; font-size: 16px; color: rgb(102, 102, 102); }
+.mainbody.forall .innerInfo .stepinfo .toolguider .edit { padding: 6px 20px; background: #fff; color: #2cbfde; line-height: 25px; font-weight: bold; font-size: 16px; border: 1px solid #2cbfde; }
+.mainbody.forall .innerInfo .stepinfo .toolguider .edit.editComplete { padding: 6px 20px; background: #2cbfde; color: #fff; line-height: 25px; font-weight: bold; font-size: 16px; border: 1px solid #2cbfde; }
+.mainbody.forall .innerInfo .stepinfo .toolguider .next { padding: 6px 20px; background: #2cbfde; color: white; line-height: 25px; font-weight: bold; font-size: 16px; }
+.mainbody.forall .innerInfo .stepinfo .toolguider .cancel { padding: 6px 20px; background: #fff; color: #2cbfde; line-height: 25px; font-weight: bold; font-size: 16px; border: 1px solid #2cbfde; }
+.mainbody.forall .innerInfo .stepinfo .toolguider { width: 70%; margin: 20px auto 0px; }
+.mainbody.forall .innerInfo .stepinfo .toolguider.ct .next { margin: 0 auto; text-align: center; width: 150px; }
+.mainbody.forall .innerInfo .stepinfo .toolguider.ct.w200 .next { width: 200px; }
+.mainbody.forall .innerInfo .stepinfo .stepform table tr td.right input[type="text"].w100 { width: 100px; }
+.mainbody.forall .innerInfo .stepinfo .stepform table tr td.right input[type="text"].w250 { width: 250px; }
+.mainbody.forall .innerInfo .stepinfo .stepform table tr td.right input[type="text"].w300 { width: 300px; }
+.mainbody.forall .innerInfo .stepinfo .stepform table tr td.right input[type="radio"] { display: none; }
+
+.stepinfo .fa-stack { display: inline-block; height: 2em; line-height: 2em; position: relative; vertical-align: middle; width: 2em; }
+.stepinfo .option .question-option { cursor: pointer; display: table-cell; vertical-align: middle; white-space: nowrap; }
+.stepinfo label.sets-radio .select { display: inline-block; font-size: 2em; height: 20px; line-height: 20px; opacity: 0; }
+.stepinfo label.sets-radio.active > .radio-icon > i, label.sets-radio > .active > .radio-icon > i { color: #2cbfde; }
+.stepinfo label.sets-radio.active .select, label.sets-radio > .active .select { opacity: 1; }
+.stepinfo label.sets-radio .radio-icon > i { color: #2cbfde; transition: color 0.1s ease-in-out 0s, opacity 0.1s ease-in-out 0s; }
+.stepinfo label.sets-radio.active > .radio-icon > i, label.sets-radio > .active > .radio-icon > i { color: #2cbfde; }
+.mainbody.forall .innerInfo .stepinfo .stepform table tr td.right .fa-stack-1x, .mainbody.forall .innerInfo .stepinfo .stepform table tr td.right .fa-stack-2x { font-size: 14px; line-height: 18px; width: 18px; color: #f6f6f6; font-weight: bold; background: #fff; border-radius: 9px; box-shadow: 1px 1px 1px 1px #999 inset; }
+.mainbody.forall .innerInfo .stepinfo .stepform table tr td.right .fa-check { display: none; color: #2cbfde; }
+
+/**** before exam step2 ****/
+.mainbody.forall .innerInfo .stepinfo .stepform .rule { line-height: 25px; font-size: 14px; }
+.mainbody.forall .innerInfo .stepinfo .stepform .rule span { }
+.mainbody.forall .innerInfo .stepinfo .toolguider.limited .next { background: #ccc; }
+
+/**** before exam step3 ****/
+.mainbody.forall .innerInfo .stepinfo .tip.phototip { text-align: left; font-size: 18px; }
+.mainbody.forall .innerInfo .stepinfo .stepform .flash { padding: 15px 70px; text-align: center; position: relative; }
+button.btn, .btn a { font-weight: bold; }
+.mainbody.forall button:focus { outline: none; }
+.form-control[disabled], fieldset[disabled] .form-control { background-color: #f4f4f4; border-radius: 0px; }
+.form-control, fieldset .form-control { background-color: #fff; border-radius: 0px; }
+
+/***** practise ****/
+.hd { display: none; }
+.parctise .examlisttitle { font-size: 30px; text-align: center; margin-bottom: 30px; }
+.parctise .table thead tr th { background: #2cbfde; border: 10px solid #fff; color: #fff; font-weight: bold; font-size: 16px; text-align: center; }
+.parctise .table tbody tr th, .parctise .table tbody tr td { background: #f6f6f6; border: 10px solid #fff; text-align: center; line-height: 35px; font-size: 14px; }
+.parctise .formCmt { background: #fff7e7 url("../images/light.png") no-repeat scroll 30px 20px; border-radius: 10px; min-height: 125px; margin: 30px 10px 0; padding: 20px 0 20px 120px; line-height: 30px; }
+.parctise .table tbody tr th, .parctise a { color: #2cbfde; text-decoration: underline; padding-top: 13px; }
+.parctise .table tbody tr th a:hover { /* font-size: 17px; */ }
+.parctise .table tbody tr th a { }
+.parctise .table tbody tr:hover td, .parctise .table tbody tr:hover th { background: #efefef; }
+
+.infoview { color: #fff; text-align: center; position: fixed; bottom: 0px; width: 100%; background: #000; min-height: 50px; z-index: 200; font-size: 16px; background: rgba(218,96,96,1); box-shadow: 3px 3px 3px 3px #333; padding: 10px 0px; }
+.infoview .circle { width: 20px; font-size: 20px; }
+.infoview .fr { margin-right: 20px; cursor: pointer; }
+
+.mainbody.forall .innerInfo .stepinfo .toolguider.limited .nocamera.btn { background: #2cbfde; }
+.btn-submit { background: #FF8A00; padding: 10px 80px; }
+.panel.parctise .table tr th { font-weight: bold; font-size: 16px; line-height: 25px; }
+
+.wangguoxiang { color: red; }
+.forwaiting { height: 30px; animation: 750ms linear 0s normal none infinite running warning-animation; background-color: #6da807; background-image: linear-gradient(-45deg, transparent 0em, transparent 0.8em, #96d923 0.9em, #96d923 2.1em, transparent 2.1em, transparent 2.9em, #96d923 3.1em); background-size: 3em 3em; border: 1px solid #6da807; border-radius: 10px; box-shadow: 1vw 3vh 10vh rgba(109, 168, 7, 0.8); position: absolute; width: 60%; left: 20%; top: 50%; z-index: 0; }
+
+.forwaiting::before { background-image: linear-gradient(to bottom, #6da807, rgba(171, 226, 77, 0.6) 15%, transparent 60%, #6da807); border-radius: 10px; bottom: 0; content: ""; height: 100%; left: 0; position: absolute; right: 0; top: 0; }
+#showc { width: 273px; margin: 0px auto; overflow: hidden; }
+#showc img { cursor: pointer; }
+#showc a { padding: 6px 20px; background: #2cbfde; color: #fff; border-radius: 5px; font-size: 14px; position: absolute; left: 318px; top: 200px; }
+#showc a:hover,#showc:hover a { opacity: 0.8; display: block; }
+
+
+.showphoto { border: 0px; padding: 0px; margin-bottom: 20px; position: relative; }
+.panel { border-radius: 0px; border: none; box-shadow: 1px 1px 1px rgba(200,200,200,0.1); }
+
+.cke_dialog_ui_vbox_child { max-width: 300px; }
+.monitorLayout { position: fixed; z-index: 100; top: 0px; left: 0px; height: 100%; width: 100%; background: rgba(0, 0, 0, 0.4); }
+.monitorBox.showInDialog { background: #fff; border: 5px solid #ccc; z-index: 999; position: fixed; top: 20%; width: 530px; height: 420px; left: 50%; text-align: center; padding-top: 10px; margin-left: -265px; }
+.monitorBox.showInDialog.heightLimited { height: 360px; overflow: hidden; }
+.monitorBox { text-align: right; margin-right: 1px; }
+.monitorBox .close { display: none; }
+.monitorBox.showInDialog .close { display: block; right: 5px; top: -5px; position: relative; }
+.monitorBox .open { position: absolute; top: 0px; width: 100%; height: 100%; float: left; z-index: 9999; left: 0px; cursor: pointer; }
+
+.liveNessResult { line-height: 25px; padding: 10px 20px 0px; width: 550px; position: relative; }
+.liveNessResult .blue { color: #2cbfde; font-weight: bold; font-size: 16px; }
+.liveNessResult .red { color: #ff0000; font-weight: bold; font-size: 16px; }
+.liveNessResult .tip { margin-top: 20px; font-weight: bold; }
+.liveNessResult .smalltip { position: absolute; right: 0px; top: 0px; color: #ccc; }
+.liveNessResult .smalltip span { font-weight: bold; color: #888; }
+
+@-webkit-keyframes warning-animation {
+    0% { background-position: 0 0; }
+    100% { background-position: 3em 0; }
+}
+
+@-moz-keyframes warning-animation {
+    0% { background-position: 0 0; }
+    100% { background-position: 3em 0; }
+}
+
+@keyframes warning-animation {
+    0% { background-position: 0 0; }
+    100% { background-position: 3em 0; }
+}
+
+
+/***** page's width limited *****/
+@media (max-width:900px) {
+    .w1000 { width: 100%; }
+    .form-horizontal .form-group { margin-left: 15px; }
+    .header .logo { display: none; }
+    .header ul.nav li.userName { float: right; padding-right: 10px; padding-left: 10px; }
+    .header ul li.examlist { padding-right: 10px; }
+    .noticeTips.forall ul li.showqa { display: block; }
+
+    .mianall .noticeTips.forall { bottom: 40px; z-index: 999; width: 100%; height: 40px; position: initial; }
+    .mianall .noticeTips.forall ul { float: left; width: 100%; }
+    .mianall .noticeTips.forall ul li.mianli { color: white; font-weight: bold; float: left; z-index: 999999; border-right: 1px solid #fff; width: 33.33%; text-align: center; line-height: 40px; height: 40px; padding: 0px; border-radius: 0px; box-shadow: none; position: initial; clear: initial; margin-right: 0px; }
+    .mianall .noticeTips.forall ul li.mianli span.qa { line-height: 30px; height: 30px; padding-left: 5px; }
+    .mianall .noticeTips.forall ul li.mianli span.im { display: initial; }
+    .mianall .noticeTips.forall ul li.onlineRefer { background: #FF8A00; top: 0px; }
+    .mianall .noticeTips.forall ul li.showqa { background: #2cbfde; }
+    .mianall .noticeTips.forall .MessageBox { border-radius: 0px; box-shadow: none; }
+    .mianall .noticeTips.forall .immMessage .MessageBox { bottom: 0px; right: 0px; position: fixed; width: 100%; top: initial; left: 0px; z-index: 999; }
+    .mianall .noticeTips.forall .onlineRefer .MessageBox { right: 0px; bottom: 0px; position: fixed; text-align: left; top: initial; left: 0px; z-index: 999; }
+    .mianall .noticeTips.forall .immMessage .MessageBox ul { text-align: left; width: initial; }
+    .mianall .noticeTips.forall .onlineRefer .MessageBox { width: 100%; }
+    .modal-body { font-size: 16px; }
+    .modal.fade .modal-dialog { border: 5px solid rgba(0, 0, 0, 0.4); border-radius: 6px; }
+    .endexampage .info .mess { padding: 100px 10px; text-align: left; margin: 0px auto; width: initial; }
+    .mainbody.forall .innerInfo { padding-bottom: 30px; }
+    .mainbody.forall .innerInfo .stepinfo { padding: 0px 10px; }
+    .mainbody.forall .innerInfo .stepinfo .list ul li { display: none; }
+    .mainbody.forall .innerInfo .stepinfo .list ul li.cur { display: block; float: left; }
+    .mainbody.forall .innerInfo .stepinfo .tip { margin: 0px; text-align: left; line-height: 35px; font-size: 18px; color: #FF8A00; clear: both; padding: 20px 0px; }
+    .mainbody.forall .innerInfo .stepinfo .stepform.step1 { padding-left: 0px; }
+    .mainbody.forall .innerInfo .stepinfo .toolguider .bottom { line-height: 39px; }
+    .mainbody.forall .innerInfo .stepinfo .toolguider a.bottom { float: left; }
+    .mainbody.forall .innerInfo .stepinfo .toolguider .bottom.wzbt { float: left; }
+    .mainbody.forall .innerInfo .stepinfo .toolguider .edit { padding: 6px 15px; float: left; }
+    .mainbody.forall .innerInfo .stepinfo .toolguider .next { padding: 6px 15px; float: right; }
+    .mainbody.forall .innerInfo .stepinfo .toolguider { width: 100%; height: 50px; }
+    .parctise .formCmt { padding: 10px 0 20px 10px; line-height: 30px; background-size: 30px; background-image: none; }
+    .cxdialog { width: 100%; }
+    .cxdialog .cxdialog_info .alertbody { padding: 30px 10px 20px 10px; text-align: center; }
+
+    .leaveMobile1 .info .mess .line1 i.fa { font-size: 55px; float: left; height: 100px; }
+    .leaveMobile5 .info .mess .line1 i.fa { font-size: 55px; float: left; }
+}

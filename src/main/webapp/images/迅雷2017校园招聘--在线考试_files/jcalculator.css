@@ -1,0 +1,14 @@
+.jcalculator_wrap {position: absolute;right: 40px;bottom: -70px;border: 2px solid #666;background: rgb(236, 244, 236);box-shadow: 1px 1px 10px rgba(0,0,0,0.4);}
+.jcalculator { display:; background: #232323; width: 201px; position: absolute; right: 0; font-family: Helvetica, Arial, Verdana, sans-serif; border-top: 1px solid #000; border-left: 1px solid #000; }
+.jcalculator span { cursor: pointer; color: #fff; float: left; display: block; width: 50px; height: 50px; line-height: 50px; font-size: 12px; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; border-right: 1px solid #000; border-bottom: 1px solid #000; text-align: center; }
+.jcalculator span:active { line-height: 52px; }
+.jcalculator .operation { background: #191919; }
+.jcalculator .operation.equal { background: #eb0934; }
+#jcalculatorinput { width: 201px; display: block; height: 35px; border: 1px solid #333; padding: 0px 10px; font-weight: bold; font-size: 16px; line-height: 35px; }
+#jcalculatorinput:focus { outline: none; border: 1px solid #ccc; }
+
+.jcalculator_wrap .calculatorTitle { background: rgba(0,0,0,0.5); color: #fff; height: 30px; line-height: 30px; }
+.jcalculator_wrap .calculatorTitle .left { float: left; margin-left: 10px; }
+.jcalculator_wrap .calculatorTitle i { font-size: 20px; float: right; margin: 5px 10px 5px 0px; cursor: pointer; transition: all 0.2s linear 0s; }
+.jcalculator_wrap .calculatorTitle i:hover { transform: rotate(180deg); }
+.showCalculator { position: absolute; text-align: center; width: 100%; }

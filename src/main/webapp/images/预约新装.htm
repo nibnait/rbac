@@ -1,0 +1,398 @@
+
+<!-- saved from url=(0055)file:///Users/wufangbing/Desktop/upgradehd/newUser.html -->
+<html style="font-size: 23.4375px;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head><body class="mui-ios mui-ios-9 mui-ios-9-1 mui-focusin">&lt;%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%&gt;
+
+
+	
+		
+		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"> 
+		<meta content="no" name="apple-mobile-web-app-capable"> 
+		<meta content="black" name="apple-mobile-web-app-status-bar-style"> 
+		<meta content="telephone=no" name="format-detection">
+		<meta content="email=no" name="format-detection">
+		<title>预约新装</title>
+		<link rel="stylesheet" type="text/css" href="./预约新装_files/style.css">
+		<link rel="stylesheet" type="text/css" href="./预约新装_files/mui.min.css">
+		<script src="./预约新装_files/rem.js"></script>
+		<script src="./预约新装_files/mui.min.js"></script>
+		<script src="./预约新装_files/jquery.min.js"></script>
+	
+	<style type="text/css">
+		#main {
+			position: relative;
+		}
+		#bg img{
+			width: 100%;
+			height: 100%;	
+		}
+		#button img{
+			width: 100%;
+			height: 100%;
+		}
+		#button{
+			height: 6.5%;
+			width: 100%;
+			position: absolute;
+			top: 90%;
+			padding:0 1rem;
+		}
+		#p1 img{
+			width: 100%;
+			height: 100%;
+		}
+		#p1{
+			width: 27%;
+			height: 17%;
+			position: absolute;
+			top:4.7rem;
+			left:5%;
+		}
+		#p2 img{
+			width: 100%;
+			height: 100%;
+		}
+		#p2{
+			width: 27%;
+			height: 17%;
+			position: absolute;
+			top:4.7rem;
+			left:39%;
+		}
+		#p3 img{
+			width: 100%;
+			height: 100%;
+		}
+		#p3{
+			width: 27%;
+			height: 17%;
+			position: absolute;
+			top:4.7rem;
+			left: 73%;
+		}
+		
+		#citydiv{
+			position: absolute;
+			bottom: 41.5%;
+			left: 3.9rem;
+		}
+		#areadiv{
+			position: absolute;
+			bottom: 24%;
+			left: 3.5rem;
+		}
+		
+		#adress{
+			position: absolute;
+			bottom: 31.5%;
+			left: 3.8rem;
+		}
+
+		#name{
+			position: absolute;
+			bottom: 19%;
+			left: 3rem;
+		}
+
+		#phone{
+			position: absolute;
+			bottom: 12.5%;
+			left: 3rem;
+		}
+		input{
+			text-align: center;
+			width: 10rem;
+			height: 30px;
+			border: none;
+			outline: medium;
+			padding-top:0.7rem;
+			font-size: 0.5rem;
+		}
+		#mask{
+			height: 100%;
+			position: fixed;
+			bottom: 0;
+		}
+		#mask img {
+			width: 100%;
+			height: 100%;
+		}
+		#pop{
+			position: absolute;
+			top:58%;
+			width: 90%;
+			margin: 0 0.9rem;
+			padding-bottom: 3rem;
+			border: 1px solid #eee;
+			font-size: 0.5rem;
+			color: #000;
+			text-align: center;
+		}
+		#areapop{
+			position: absolute;
+			top: 64%;
+			width: 90%;
+			margin: 0 0.9rem;
+			padding-bottom: 3rem;
+			border: 1px solid #eee;
+			font-size: 0.5rem;
+			color: #000;
+			text-align: center;
+		}
+		#close{
+			width: 2rem;
+			height: 2rem;
+			position: absolute;
+			top:40%;
+			right: 0.3rem;
+		}
+		
+		#arrow1{
+			position: absolute;
+			bottom: 43%;
+			left: 13rem;
+		}
+
+		#arrow2{
+			position: absolute;
+			bottom: 35.7%;
+			left: 13rem;
+		}
+
+		#close{
+			position: absolute;
+			left: 95%;
+			
+		}
+
+	</style>
+	
+		<div id="main">
+			<div id="bg">
+				<img src="./预约新装_files/background.png" alt="">
+			</div>
+
+			<div id="p1" onclick="changeIcon(this);">
+				<img src="./预约新装_files/ds.png" alt="">
+			</div>
+			
+			<div id="p2" onclick="changeIcon(this);">
+				<img src="./预约新装_files/kd.png">
+			</div>
+			
+			<div id="p3" onclick="changeIcon(this);">
+				<img src="./预约新装_files/qyw_b.png">
+			</div>
+			<!-- 两个箭头 -->
+			<div id="arrow1"><img src="./预约新装_files/button.png"></div>
+			
+			<!-- 按钮 -->
+			<div id="button"><img src="./预约新装_files/button.jpg"></div>
+
+			<form action="file:///Users/wufangbing/Desktop/upgradehd/toHD.action" method="post" id="form1">
+			<div id="citydiv" style="height: 40px;width: 11rem;">
+				<input type="" name="" id="" value="" style="border:none;width: 9rem;">
+			</div>
+			
+			
+			<div id="adress" style="height: 30px;width: 10rem;">
+				<input type="text" name="" id="" placeholder="xx街道办 xx路 xx小区 xx楼 xx室" style="border:none; height: 30px;padding:0.5rem;">
+			</div>
+			
+			<!-- 小区名称 -->
+			<div id="areadiv" style="height: 40px;width: 10rem;">
+				<input type="text" name="" id="" placeholder="xx小区 xx楼" style="border:none; height: 30px;padding:0.5rem 0 0 0;">
+			</div>
+
+			<div id="name" style="height: 30px;width: 10rem;">
+				<input type="text" name="" id="" value="" style="border:none; height: 30px;padding:0.5rem 0 0 0rem;">
+			</div>
+			
+			<div id="phone" style="height: 30px;width: 10rem;">
+				<input type="text" name="" id="" value="" style="border:none; height: 30px;padding:0.5rem 0 0 0;">
+			</div>
+			</form>
+			<!-- 提交form表单结束 -->
+			
+			<div id="pop" style="display: none;">
+			  <ul class="mui-table-view">
+			    <li class="mui-table-view-cell">西安市</li>
+			    <li class="mui-table-view-cell">西咸新区</li>
+			    <li class="mui-table-view-cell">长安区</li>
+			    <li class="mui-table-view-cell">宝鸡市</li>
+			    <li class="mui-table-view-cell">咸阳市</li>
+			    <li class="mui-table-view-cell">铜川市</li>
+			    <li class="mui-table-view-cell">渭南市</li>
+			    <li class="mui-table-view-cell">延安市</li>
+			    <li class="mui-table-view-cell">榆林市</li>
+			    <li class="mui-table-view-cell">汉中市</li>
+			    <li class="mui-table-view-cell">安康市</li>
+			    <li class="mui-table-view-cell">商洛市</li>
+		
+			  </ul>
+			</div>
+			
+		
+		</div>
+		
+		<div id="mask" style="display: none;">
+			<img src="./预约新装_files/mask.png">
+			<div id="close"><img style="display:block;width:12px;height:10px;" src="./预约新装_files/caret.jpg"></div>
+		</div>
+		
+		<script type="text/javascript">
+		
+		
+			var postData = {
+					"city":"",
+					"addr":"",
+					"area":"",
+					"name":"",
+					"phone":"",
+					"userType":1,
+					"businessType":2
+			};
+		
+			var bt = $('#button>img');
+			bt.click(function(){
+				// 提交按钮需要check
+				var $phone = $('#phone>input').val();
+				var $name = $('#name>input').val();
+				var $addr = $('#adress>input').val();
+				var $city =$('#citydiv>input').val();
+				var $area =$('#areadiv>input').val();
+				
+				postData.phone = $phone;
+				postData.name = $name;
+				postData.addr = $addr;
+				postData.city = $city;
+				postData.area = $area;
+				
+				if(! $city){
+					alert("城市不能为空!");
+					return false;
+				}
+
+				if(! $addr){
+					alert("详细地址不能为空!");
+					return false;
+				}
+
+				if(! $area){
+					alert("小区名称不能为空!");
+					return false;
+				}
+				
+				if(! $name){
+					alert("姓名不能为空!");
+					return false;
+				}
+				if(! $phone){
+					alert("电话号码不能为空!");
+					return false;
+				}
+				if( !IsTelephone($phone)){
+					alert("电话号码格式不正确!");
+					return false;
+				}
+				
+
+				$.post("toHD.action",postData );
+				$('#mask').show();
+			});
+			
+			// // 检查电话号码,格式正确返回true,不正确返回false
+			// function IsTelephone(obj){ 
+			// 	var pattern=/(^0[0-9]{2,3}\-[0-9]{3,8}$)|(^[0-9]{3,8}$)|(^\([0-9]{3,4}\)[0-9]{3,8}$)|(^0{0,1}1[0-9]{10}$)/; 
+			// 	if(pattern.test(obj)){ 
+			// 		return true; 
+			// 	}else{ 
+			// 		return false; 
+			// 	} 
+			// } 
+			// 电话匹配false
+			function IsTelephone(obj){ 
+
+				var pattern= /^1\d{10}$/||/^[0-9]\d{6}$/;
+				if(pattern.test(obj)){ 
+					return true; 
+				}else{ 
+					return false; 
+				} 
+			} 
+			
+			function changeIcon(obj){
+				switch(obj.id){
+					case 'p1' :
+					$(obj).children('img').attr('src','images/ds_b.png');
+					$('#p2').children('img').attr('src','images/kd.png');
+					$('#p3').children('img').attr('src','images/qyw.png');
+					postData.businessType = 0;
+					break;
+					
+					case 'p2' :
+					$(obj).children('img').attr('src','images/kd_b.png');
+					$('#p1').children('img').attr('src','images/ds.png');
+					$('#p3').children('img').attr('src','images/qyw.png');
+					postData.businessType = 1;
+					break;
+					
+					case 'p3' :
+					$(obj).children('img').attr('src','images/qyw_b.png');
+					$('#p2').children('img').attr('src','images/kd.png');
+					$('#p1').children('img').attr('src','images/ds.png');
+					postData.businessType = 2;
+					break;
+				}
+			}
+			
+			//所在城市下拉菜单控制	
+			$('#citydiv').click(function(){
+				if($('#pop').css('display') == 'none'){
+					$('#pop').show();
+					
+				}else{
+					$('#pop').hide();
+				}
+				//下拉菜单子项点击事件
+				var lis = $('#pop>ul>li');
+				lis.click(function(){
+					$('#citydiv>input').val($(this).text());
+					postData.city = $.trim($(this).text());
+					$('#pop').hide();
+					
+					var area1 = cityinfo[postData.city];
+					if(area1.length > 0){
+						postData.area = area1[0];
+						
+					}
+					var areali = "";
+					for ( var index in area1) {
+						areali += '<li class="mui-table-view-cell">'+area1[index]+'</li>';
+					}
+					$('#areapop>ul').html(areali);
+					var lis = $('#areapop>ul>li');
+					lis.click(function(){
+						$('#areadiv>input').val($(this).text());
+						postData.area = $(this).text();
+						
+					});
+				});
+			});
+			
+			
+			//遮罩层关闭按钮
+			$('#close').click(function(){
+				$('#mask').hide();
+			})
+			
+			var HEIGHT = $('#bg>img').height();
+	        $(window).resize(function() {
+	            $('#bg>img').height(HEIGHT);
+	        });
+		</script>
+		
+	
+
+
+
+</body></html>
