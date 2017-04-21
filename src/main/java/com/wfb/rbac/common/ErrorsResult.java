@@ -34,7 +34,7 @@ public interface ErrorsResult {
 
     ApiResultModel CAPTCHA_NOT_BLANK = ResultBuilder.getError(-209, "验证码为空");
 
-    ApiResultModel NO_PERMISSION = ResultBuilder.getError(-210, "对不起，您是个人账户，无法申请贷款");
+    ApiResultModel NO_PERMISSION = ResultBuilder.getError(-210, "权限不足");
 
     /**
      * -5xx 数据库\服务器错误

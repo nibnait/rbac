@@ -6,10 +6,9 @@
 
 参数名|类型|必选|说明
 -----|---|----|---|
-userId|Integer|√|userId
+userId|String|√|用户id
 
 #### 请求方式：GET
-#### 参数列表：无
 #### 返回示例：
 ```
 {
@@ -122,6 +121,64 @@ fileBase64|String|√|图片文件的base64编码
 
 ## 联系人模块
 
+### 获取所有的职位（角色）
+#### URL：/api/user/getAllRole
+#### 请求方式：GET
+#### 参数列表：无
+#### 返回示例：
+```
+{
+  "status": 0,
+  "data": [
+    {
+      "id": 1,
+      "name": "人力资源专员"
+    },
+    {
+      "id": 2,
+      "name": "正式员工"
+    },
+    {
+      "id": 3,
+      "name": "部门经理"
+    },
+    {
+      "id": 4,
+      "name": "实习生"
+    }
+  ]
+}
+```
+
+### 获取所有的部门
+#### URL：/api/user/getAllBu
+#### 请求方式：GET
+#### 参数列表：无
+#### 返回示例：
+```
+{
+  "status": 0,
+  "data": [
+    {
+      "id": 1,
+      "name": "人力资源"
+    },
+    {
+      "id": 2,
+      "name": "技术部"
+    },
+    {
+      "id": 3,
+      "name": "运营部"
+    },
+    {
+      "id": 4,
+      "name": "销售部"
+    }
+  ]
+}
+```
+
 ### 添加员工信息
 #### URL：/api/user/addUser
 #### 请求方式：GET
@@ -129,11 +186,28 @@ fileBase64|String|√|图片文件的base64编码
 
 参数名|类型|必选|说明
 -----|---|----|---|
-userId|String|√|用户id
+name|String|√|员工姓名
+email|String|√|给员工分配的邮箱
+logName|String|√|登录名
+password|String|√|登录密码
+workNo|String|√|工号
+roleName|String|√|职位
+birthday|String|√|生日
+address|String|√|地址
+sex|String|√|性别
+idnum|String|√|身份证号
+buName|String|√|部门名称
+phoneNum|String|√|员工手机号
+image|String|√|头像
+roleId|String|√|角色id
+buId|String|√|部门id
 
 #### 返回示例：
 ```
-
+{
+  "status": 0,
+  "msg": "添加成功"
+}
 ```
 
 

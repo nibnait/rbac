@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<!-- saved from url=(0085)http://xunlei.acmcoder.com/v3.0/htmls/photo/photoswf.html?id=57dd4a9a4a10cb37276d7629 -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>拍照</title>
+    <script src="./swfobject.js"></script>
+    <script type="text/javascript" src="./jquery.min.js"></script>
+
+    <script src="./jquery.cookie.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        function show_msg(data) {
+            //alert('消息:' +data['content']);
+            var id = getQueryStringByName("id")
+            //var id = top.user.guid;
+        }
+
+        var judgeNum =1 ;
+        window.takephoto = function (data) {
+           
+            top.ACMGlobal.liveNessResult = null
+            top.isJianpai = true;
+            var id = getQueryStringByName("id");
+
+            var ids = data['content'].split(',');
+
+            for (var i = 0; i < ids.length; i++) {
+                if (ids[i] == id) {
+                     judgeLimited = 3;
+                    $.cookie('JudgeLimited', 3);
+                    var num = data['number'];
+                    judgeNum = num;
+                    doJianpai(id, num);
+                };
+            };
+        }
+
+        function doJianpai(id,num) {
+            try {
+                thisMovie("ziliao").doSnapas();//生成快照
+                if (top.ACMGlobal.faceRecognition) {
+                    thisMovie("ziliao").doSaveas(top.user.guid, 1, num, 1);
+                } else {
+                    thisMovie("ziliao").doSaveas(top.user.guid, 1, num, 0);
+                }
+                thisMovie("ziliao").againSnap();//返回到拍摄
+            }
+            catch(e){}
+        }
+
+
+       
+    </script>
+    <style>
+        body { margin: 0px; padding: 0px; text-align: center; }
+        .btn { background: #2cbfde none repeat scroll 0 0; color: white; font-size: 16px; font-weight: bold; line-height: 18px; padding: 6px 20px; border: 0px; cursor: pointer; font-family: microsoft yahei; }
+        .btn:hover { opacity: 0.8; }
+        button.btn:focus { outline: none; }
+        button.btn.nobg { background: none; border: 1px solid #2cbfde; color: #2cbfde; height: 29px; }
+    </style>
+</head>
+<body>
+    <script type="text/javascript">
+        top.isJianpai = false;
+        $(document).ready(function () {
+            if ($(window.parent.document).find("#caremaSwf").val() == "0") {
+                if (top.location.hash.indexOf('myPhoto') == -1) {
+                    top.window.initPhotoShow();
+                    $(window.parent.document).find("#myphoto").attr("style", "");
+                    $(window.parent.document).find("#caremaSwf").val("1");
+                    try {
+                        againsnap();
+                    } catch (e) {
+
+                    }
+                }
+            }
+            
+            if ($.cookie('JudgeLimited') == null) {
+                $.cookie('JudgeLimited', 3);
+            }
+
+        });
+
+        //flash 打开了摄像头
+        function openCamera() {
+
+            if(!$.cookie("hasCarema")){
+                $.cookie("hasCarema",true,{expires:7,path:'/'});
+            }
+
+            top.window.sureHide();
+            top.ACMGlobal.camera = true;
+
+
+            // Put video listeners into place
+            if (navigator.getUserMedia) {
+                // Standard
+                navigator.getUserMedia(videoObj, function (stream) {
+                    $(top.window.document).find("#myModal  .btn.btn-default").click();
+
+                }, errBack);
+
+            } else if (navigator.webkitGetUserMedia) {
+                // WebKit-prefixed
+                navigator.webkitGetUserMedia(videoObj, function (stream) {
+                    $(top.window.document).find("#myModal  .btn.btn-default").click();
+                }, errBack);
+            } else if (navigator.mozGetUserMedia) {
+                // Firefox-prefixed
+                navigator.mozGetUserMedia(videoObj, function (stream) {
+                    $(top.window.document).find("#myModal  .btn.btn-default").click();
+                }, errBack);
+            }
+        }
+        //flash 拒绝打开了摄像头
+        function notAllowed() {
+            top.window.cxalert('提示', '系统要求您打开摄像头监拍功能，请刷新页面，点击“允许”按钮！');
+            top.ACMGlobal.camera = false;
+            $.cookie("hasCarema",null,{expires:-1,path:'/'});
+        }
+        //var swfVersionStr = "10.0.0";
+        //var params = {};
+        //params.quality = "high";
+        //params.allowfullscreen = "false";
+        //params.allowscriptaccess = "always";
+        ////params.wmode = "transparent";
+        //var so = new SWFObject("photo.swf", "mymovie", "324", "272", swfVersionStr, params);
+        ////参数意思： 地址，Flash 的 id（不是容器的 id），宽，高，版本需求，背景颜色
+        ////这是最基本的，如果你要高级的设置，就仔细翻翻说明吧。
+        //so.write("flashcontent");
+
+        function onUploadSuccess(d) {
+            if (d.indexOf("Upload Success") > -1) {
+                if (top.ACMGlobal.faceRecognition && top.isJianpai) {                    
+                    if (parseInt($.cookie("JudgeLimited")) > 0) {
+                        $.cookie("JudgeLimited", (parseInt($.cookie("JudgeLimited")) - 1));
+                        monitorJudge(d);
+                    }else{
+                        window.clearInterval(judgeT);
+                        judgeLimited = 3;
+                        judgeT = null;
+                        top.cxBigAlert('监拍身份验证结果', '<div class="liveNessResult"><div>考试过程中，通过监拍，您的身份验证结果为：<span class="red">未通过</span></div><div>考生姓名：' + top.ACMGlobal.realName + '</div><div>手机号：' + top.ACMGlobal.mobile + '</div><div>身份证号：' + top.ACMGlobal.idcard + '</div>' + '<div style="padding:10px 0px;">您可以继续作答试题。考试结束后，我们会人工比对照片，如果确实是您本人，将不会影响考试成绩！</div><div  class="tip">注意：整场答题时，确保脸部在摄像头监拍范围，清晰可见，系统会全程监拍！</div></div>');
+                    }
+                }
+                if (!top.isJianpai) {
+                    var id = getQueryStringByName("id");
+                    var url = "http://capture.acmcoder.com/photo/istestupload.php?id=" + top.user.guid;
+                    $.ajax({
+                        type: "get",
+                        url: url,
+                        dataType: "jsonp",
+                        jsonp: "callback",//传递给请求处理程序或页面的，用以获得jsonp回调函数名的参数名(默认为:callback)
+                        async: false,
+                        success: function (json) {
+                            var myJson = eval(json);;
+                            if (myJson.upload == true) {
+                                if (top.ACMGlobal.faceRecognition) {
+
+                                } else {
+                                    window.parent.surenext(myJson.imageUrl);
+                                    imgUrl = myJson.imageUrl.substring(0, myJson.imageUrl.indexOf("?"));
+                                    //myDetect(imgUrl);
+                                    $("#againsnap").hide();
+                                    $("#suresnap").hide();
+                                    $("#snap").show();
+                                }
+                            }
+                            else {
+                                alert("系统繁忙，请稍后重试！");
+                            }
+                        },
+                        error: function (data) {
+                            alert("照片上传不成功，请稍后重试！");
+                        }
+                    });
+                } else {
+                    
+                }
+                
+            } else if (d.indexOf("image.acmcoder.com") == -1) {
+                var myImageUrl = d.replace("@","");
+                window.parent.surenext(myImageUrl);
+                imgUrl = myImageUrl.substring(0, myImageUrl.indexOf("?"));
+                //myDetect(imgUrl);
+                $("#againsnap").hide();
+                $("#suresnap").hide();
+                $("#snap").show();
+            }else{
+            
+            }
+        }
+
+        var judgeLimited = 3;
+
+
+        //检测
+        var judgeT = null;
+        function monitorJudge(d) {
+            var judgeHtml = d.replace("@Upload Success", "");
+            var judgeJson = $.parseJSON(judgeHtml);
+            if (typeof (judgeJson.error_message) != "undefined") { //存在错误
+                if (judgeLimited > 0) { //还可以再检测一遍
+                    if (judgeT == null) { judgeT = window.setInterval("doJudgeTAS()", 5000); }
+                    judgeLimited--;
+                } else { //次数限制
+                    window.clearInterval(judgeT);
+                    judgeLimited = 3;
+                    judgeT = null;
+                    top.cxBigAlert('监拍身份验证结果', '<div class="liveNessResult"><div>考试过程中，通过监拍，您的身份验证结果为：<span class="red">未通过</span></div><div>考生姓名：' + top.ACMGlobal.realName + '</div><div>手机号：' + top.ACMGlobal.mobile + '</div><div>身份证号：' + top.ACMGlobal.idcard + '</div>' + '<div style="padding:10px 0px;">您可以继续作答试题。考试结束后，我们会人工比对照片，如果确实是您本人，将不会影响考试成绩！</div><div  class="tip">注意：整场答题时，确保脸部在摄像头监拍范围，清晰可见，系统会全程监拍！</div></div>');
+
+                }
+
+                $.post("http://php.acmcoder.com/liveness/verifylog.php",{id:top.user.guid,type:1,result:false,reason:judgeJson.error_message},function(){});
+            } else {//有返回结果
+                if (typeof (judgeJson.result_faceid) != "undefined") { //
+                    var confidence = judgeJson.result_faceid.confidence;
+                    var thresholds = judgeJson.result_faceid.thresholds["1e-3"];
+                    var resultHtml = '';
+                    if (parseFloat(confidence) >= parseFloat(thresholds)) {
+                        window.clearInterval(judgeT);
+                        judgeLimited = 3;
+                        judgeT = null;
+                        top.cxBigAlert('监拍身份验证结果', '<div class="liveNessResult"><div>考试过程中，通过监拍，您的身份验证结果为：<span class="blue">已通过</span></div><div>考生姓名：' + top.ACMGlobal.realName + '</div><div>手机号：' + top.ACMGlobal.mobile + '</div><div>身份证号：' + top.ACMGlobal.idcard + '</div>' + '<div class="tip">注意：整场答题时，确保脸部在摄像头监拍范围，清晰可见，系统会全程监拍！</div></div>');
+
+                    } else {
+                        if (judgeT == null) { judgeT = window.setInterval("doJudgeTAS()", 5000); }
+                        judgeLimited--;
+                    }
+                }
+                else {
+                    if (judgeT == null) { judgeT = window.setInterval("doJudgeTAS()", 5000); }
+                    judgeLimited--;
+                }
+                $.post("http://php.acmcoder.com/liveness/verifylog.php", { id: top.user.guid, type: 1, result: true, reason: "" }, function () { });
+            }
+        }
+        function doJudgeTAS() {
+            doJianpai(top.ACMGlobal.candId, judgeNum);
+        }
+
+        function jsgetStatus(d) {
+            if (parseInt(d) == 1) {
+                $(window.parent.document).find(".monitor").show();
+            } else {
+                $(window.parent.document).find(".monitor").hide();
+            }
+        }
+
+        function thisMovie(movieName) {
+            if (navigator.appName.indexOf("Microsoft") != -1) {
+                return window[movieName]
+            }
+            else {
+                return document[movieName]
+            }
+        }
+
+        function callFromFlash() {
+            var id = getQueryStringByName("id");
+
+            thisMovie("ziliao").doSnapas();
+            if (top.ACMGlobal.faceRecognition) {
+                thisMovie("ziliao").doSaveas(top.user.guid, 2, 1, 1);
+            } else {
+                thisMovie("ziliao").doSaveas(top.user.guid, 2, 1, 0);
+            }
+            thisMovie("ziliao").againSnap();
+        }
+        function dopaizhao() {
+            thisMovie("ziliao").doSnapas();
+            $("#againsnap").show();
+            $("#suresnap").show();
+            $("#snap").hide();
+        }
+        function againsnap() {
+            thisMovie("ziliao").againSnap();
+            $("#againsnap").hide();
+            $("#suresnap").hide();
+            $("#snap").show();
+        }
+        function dosave() {
+            top.isJianpai = false;
+            var id = getQueryStringByName("id");
+            if (top.ACMGlobal.faceRecognition) {
+                thisMovie("ziliao").doSaveas(top.user.guid, 2, 1, 1);
+            } else {
+                thisMovie("ziliao").doSaveas(top.user.guid, 2, 1, 0);
+            }
+
+            thisMovie("ziliao").againSnap();
+
+            top.window.sureHide();
+        }
+
+        //搭建js与flash互通的环境
+        function thisMovie(movieName) {
+            if (navigator.appName.indexOf("Microsoft") != -1) {
+                return window[movieName];
+            } else {
+                return document[movieName];
+            }
+        }
+
+        function getQueryStringByName(name) {
+
+            var result = location.search.match(new RegExp("[\?\&]" + name + "=([^\&]+)", "i"));
+
+            if (result == null || result.length < 1) {
+                return "";
+            }
+
+            return result[1];
+        }
+
+        //启动定时器
+        //var cameraT = window.setInterval("InitMyCamera()", 1000);
+        //function InitMyCamera() {
+        //    try {
+        //        if (navigator.getUserMedia) { // 标准的API
+        //            navigator.getUserMedia({ "video": true }, function (stream) {
+        //                window.clearInterval(cameraT);
+        //            }, errBack);
+        //        } else if (navigator.webkitGetUserMedia) { // WebKit 核心的API
+        //            navigator.webkitGetUserMedia({ "video": true }, function (stream) {
+        //                window.clearInterval(cameraT);
+        //            }, errBack);
+        //        }
+        //    }
+        //    catch (e) {
+
+        //    }
+
+        //}
+        //function errBack() {
+        //    console.log('camera is error!');
+        //}
+
+
+        var videoObj = { "video": true },
+            errBack = function (error) {
+                window.parent.alert("请允许使用摄像头！<br> 浏览器右上角 <img src='http://cdn.acmcoder.com/assets/public/v3.0/htmls/exam/images/carema.jpg' /> 处，设置开启摄像头！");
+            },
+            succBack = function (error) {
+            };
+
+
+        
+    </script>
+
+    <div id="flashcontent">
+        <div style="position: absolute;z-index: -1;text-align: center;font-family: microsoft yahei;padding: 50px 0px;width: 100%;">正在加载摄像头...</div>
+        <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,28,0" width="332" height="332" name="ziliao" id="ziliao">
+            <param name="movie" value="photo7.swf">
+            <param name="quality" value="high">
+            <param name="FlashVars" value="servicesUrl=http://capture.acmcoder.com/photo/imageV2.php&amp;pid=56824&amp;mtype=1&amp;num=123&amp;compare=0">
+            <param name="wmode" value="transparent">
+            <param name="allowScriptAccess" value="always">
+            <embed id="ziliao" name="ziliao" src="photo7.swf" allowscriptaccess="always" width="65" height="65" quality="high" flashvars="servicesUrl=http://capture.acmcoder.com/photo/imageV2.php&amp;pid=56824&amp;mtype=1&amp;num=123&amp;compare=0" pluginspage="http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" wmode="transparent">
+        </object>
+    </div>
+    <br>
+    <button id="snap" onclick="dopaizhao()" class="btn" style="display: inline-block;">拍照</button> <button onclick="dosave()" id="suresnap" class="btn" style="display: none;">确定</button> <button id="againsnap" onclick="againsnap()" class="btn nobg" style="display: none;">重拍</button>
+
+
+</body></html>

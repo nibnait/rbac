@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class RoleDao extends HibernateBaseDao<RoleEntity> {
     public RoleDao(){
-        super(UserEntity.class, "id");
+        super(RoleEntity.class, "id");
     }
 
 }
