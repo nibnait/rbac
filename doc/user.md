@@ -109,7 +109,7 @@ fileBase64|String|√|图片文件的base64编码
 {
   "status": 0,
   "data": {
-     "url":"xxx"
+    "url": "/headImg/d7fcec94f50743f0839776da13148126.jpg"
   }
 }
 

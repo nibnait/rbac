@@ -34,7 +34,7 @@ public class CatAllApproval {
     public ApiResultModel getAllApproval(@RequestParam(required = true) String userId){
         ApiResultModel resultModel = null;
         UserEntity user = userDao.findBy("id", Integer.parseInt(userId));
-        if (checkPermission(userId, user)){
+        if (checkPermission(user.getBuId(), user.getRoleId())){
             Integer status = getStatus(user);
             List<VacateEntity> allVacateList = vacateDao.findAllBy("status", status);
             List<VacateResultModel> allVacate = new ArrayList<>();
@@ -70,6 +70,8 @@ public class CatAllApproval {
         VacateResultModel resultModel = new VacateResultModel();
         UserEntity user = userDao.findBy("id", entity.getUserId());
         resultModel.setUserName(user.getName());
+        resultModel.setBuName(user.getBuName());
+        resultModel.setWorkNo(user.getWorkNo());
         resultModel.setPhoneNum(entity.getPhoneNum());
         resultModel.setDescrition(entity.getDescrition());
         resultModel.setCreateAt(TimeUtils.getDate(entity.getCreateAt()));
@@ -108,9 +110,9 @@ public class CatAllApproval {
         return result;
     }
 
-    private boolean checkPermission(String userId, UserEntity user) {
+    private boolean checkPermission(Integer buId, Integer roleId) {
         //检查权限
-        List<PrivilegeUserEntity> allByRoleAndBu = privilegeUserDao.findAllByRoleAndBu(user.getBuId(), user.getRoleId());
+        List<PrivilegeUserEntity> allByRoleAndBu = privilegeUserDao.findAllByRoleAndBu(buId, roleId);
         for (PrivilegeUserEntity privilegeUserEntity : allByRoleAndBu){
             if (privilegeUserEntity.getPrivilegeId() == 14){
                 return true;

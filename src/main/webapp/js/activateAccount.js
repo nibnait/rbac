@@ -39,36 +39,33 @@ function initInfo(result){
 
     //初始化所有权限
     function initPermissionMap(result){
-        // var image0         = result.data.permissionMap.image;
-        // var name0          = result.data.permissionMap.name;
-        // var logName0       = result.data.permissionMap.logName;
-        // var email0         = result.data.permissionMap.email;
-        // var sex0           = result.data.permissionMap.sex;
-        // var birthday0      = result.data.permissionMap.birthday;
-        // var address0       = result.data.permissionMap.address;
-        // var idnum0         = result.data.permissionMap.idnum;
-        // var workNo0        = result.data.permissionMap.workNo;
-        // var roleName0      = result.data.permissionMap.roleName;
-        // var buName0        = result.data.permissionMap.buName;
-        // var phoneNum0      = result.data.permissionMap.phoneNum;
-        // var registerTime0  = result.data.permissionMap.registerTime;
-        // var password0      = result.data.permissionMap.password;
+        var image0         = result.data.permissionMap.image;
+        var name0          = result.data.permissionMap.name;
+        var logName0       = result.data.permissionMap.logName;
+        var email0         = result.data.permissionMap.email;
+        var sex0           = result.data.permissionMap.sex;
+        var birthday0      = result.data.permissionMap.birthday;
+        var address0       = result.data.permissionMap.address;
+        var idnum0         = result.data.permissionMap.idnum;
+        var workNo0        = result.data.permissionMap.workNo;
+        var roleName0      = result.data.permissionMap.roleName;
+        var buName0        = result.data.permissionMap.buName;
+        var phoneNum0      = result.data.permissionMap.phoneNum;
+        var registerTime0  = result.data.permissionMap.registerTime;
+        var password0      = result.data.permissionMap.password;
 
 
 
-        // var arr0 =['image0','name0','0logName','email','sex','birthday','address','idnum','workNo', 'roleName','buName','phoneNum',
-        //  'registerTime0','password'];
+        var arr0 =[image0,name0,logName0,email0,sex0,birthday0,address0,idnum0,workNo0, roleName0,buName0,phoneNum0,
+         registerTime0,password0];
 
         var arr =['image','name','logName','email','sex','birthday','address','idnum','workNo', 'roleName','buName','phoneNum',
          'registerTime','password'];
 
-        
-        var arr1 =[1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1];
-        console.log(arr1);
 
-            for(var i =0;i<arr1.length; i++)
+            for(var i =0;i<arr0.length; i++)
                {
-                    if(arr1[i] ==0)
+                    if(arr0[i] ==0)
                      $('.'+arr[i]).attr({'disabled':'disabled'});
                     
                 }
@@ -78,17 +75,21 @@ function initInfo(result){
     }
 
     //图片上传
+    var imgSrc='';
     function inserImage(fileBase64,userId){
         $.ajax({
-            type:'GET',
+            type:'POST',
             url:'/api/user/uploadHeadImage',
             dataType:'json',
             data:{'userId':userId,
                    'fileBase64':fileBase64
                },
             success:function(result){
-                if(result.status == 0)
+                if(result.status == 0){
+                    imgSrc = result.data.url;
                     alert('保存图片成功');
+                }
+
                 else
                     alert('保存失败');
             },
@@ -148,27 +149,26 @@ $(function(){
     })
 
 
-    initPermissionMap();
-    //  $.ajax({
-    //     type:'GET',
-    //     url:'/api/user/checkPermission',
-    //     dataType:'json',
-    //     data:{userId:userId},
-    //     success:function (result) {
-    //         if(result)
-    //         {
-    //             console.log(result);
-    //             initPermissionMap(result);
-    //         }
-    //         else
-    //         {
-    //             console.log('error');
-    //         }
-    //     },
-    //     err:function(){
-    //         console.log('error');
-    //     }
-    // })
+     $.ajax({
+        type:'GET',
+        url:'/api/user/checkPermission',
+        dataType:'json',
+        data:{userId:userId},
+        success:function (result) {
+            if(result)
+            {
+                console.log(result);
+                initPermissionMap(result);
+            }
+            else
+            {
+                console.log('error');
+            }
+        },
+        err:function(){
+            console.log('error');
+        }
+    })
 
 
 
@@ -180,22 +180,22 @@ $(function(){
     })
       
      // 修改结束后提交信息
-      $('.submiit').click(function(){
+      $('.submit').click(function(){
             var sex ='';
             $('input[type=radio]').each(function(index){
                 if(index ==0)
                     sex ='男';
                 else
                     sex = '女';
-            }) 
+            });
             
             $.ajax({
                 type:'GET',
                 url:'/api/user/update',
                 dataType:'json',
                 data:{
-                    'userId':'userId',
-                    'image':fileBase64,
+                    'userId':userId,
+                    'image':imgSrc,
                     'name':$('.name').val(),
                     'logName':$('.logName').val(),
                     'email':$('.email').val(),
@@ -213,7 +213,12 @@ $(function(){
                 },
                 success:function(result){
                     if(result.status ==0)
+                    {
                         alert(result.msg);
+                        window.location.href='four_modules.html';
+
+                    }
+
                     else if(result.status ==-202)
                          alert(result.msg);
                      else

@@ -49,29 +49,35 @@
 			<div class="row add">
 					<div class="col-md-5 col-sm-5 text-right">请假类别：</div>
 					<div class="col-md-4 col-sm-4">
-						<select>
-							<option value="">1111</option>
-							<option value="">2222</option>
-							<option value="">3333</option>
-							<option value="">4444</option>
+						<select class="type">
+							<option value="请选择">请选择</option>
+							<option value="年假">年假</option>
+							<option value="病假">病假</option>
+							<option value="婚假">婚假</option>
+							<option value="事假">事假</option>
+							<option value="产假">产假</option>
+							<option value="丧假">丧假</option>
+							<option value="工伤">工伤</option>
+							<option value="陪产假">陪产假</option>
 						</select>
+
 					</div>
 					
 			 </div>
 
 			 <div class="row add">
-					<div class="col-md-5 col-sm-5 text-right">请假时长(／天)：</div>
+					<div class="col-md-5 col-sm-5 text-right">请假开始时间：</div>
 					<div class="col-md-4 col-sm-4">
-					<input class="time" type="text">
+					<input class="beginDate" type="date">
 					</div>
 				 	
 			 </div>
 
 
 			 <div class="row add">
-					<div class="col-md-5 col-sm-5 text-right">请假开始时间：</div>
+					<div class="col-md-5 col-sm-5 text-right">请假结束时间：</div>
 					<div class="col-md-4 col-sm-4">
-					<input class="data" type="date">
+					<input class="endDate" type="date">
 					</div>
 				 	
 			 </div>
@@ -79,7 +85,7 @@
 			 <div class="row add">
 					<div class="col-md-5 col-sm-5 text-right">请假联系电话：</div>
 					<div class="col-md-4 col-sm-4">
-					<input class="phone" type="text">
+					<input class="phoneNum" type="text">
 					</div>
 				 	
 			 </div>
@@ -87,7 +93,7 @@
 			 <div class="row add">
 					<div class="col-md-5 col-sm-5 text-right">请假相关说明：</div>
 					<div class="col-md-4 col-sm-4">
-					<textarea cass="explain"></textarea>
+					<textarea class="descrition"></textarea>
 					</div>
 				 	
 			 </div>
@@ -95,7 +101,7 @@
 			 <div class="row">
 					<div class="col-md-5 col-sm-5 text-right"></div>
 					<div class="col-md-4 col-sm-4 text-right">
-						  <button type="button" class="btn btn-info btn-lg">提交</button>		
+						  <button type="button" class="btn btn-info btn-lg">提交</button>
 
 					</div>
 				 	

@@ -51,8 +51,18 @@ public class TimeUtils {
         return getTime(new Date());
     }
 
-    public static Date parseDate(String timeString) {
+    public static Date parseDetailDate(String timeString) {
         sFormat = new SimpleDateFormat(DETAIL_TIME_FORMAT, Locale.CHINA);
+        try {
+            return sFormat.parse(timeString);
+        } catch (ParseException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public static Date parseDate(String timeString) {
+        sFormat = new SimpleDateFormat(DATE_FORMAT, Locale.CHINA);
         try {
             return sFormat.parse(timeString);
         } catch (ParseException e) {

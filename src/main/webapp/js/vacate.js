@@ -26,5 +26,32 @@ $(function(){
 	        });
 
 
+	        $('button').click(function () {
+
+					$.ajax({
+						type:'GET',
+						url:'/api/vacate/apply',
+						dataType:'json',
+						data:{
+							'userId'	:userId,
+							'phoneNum'	:$('.phoneNum').val(),
+								'type'	:$('.type').val(),
+							'descrition':$('.descrition').val(),
+							'beginDate'	:$('.beginDate').val(),
+							'endDate'	:$('.endDate').val()
+						},
+						success:function (result) {
+							if(result.status ==0)
+								alert(result.msg);
+							else
+								alert('请求失败');
+                        }
+					})
+
+            })
+
+
+
+
 	        
 })

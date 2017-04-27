@@ -41,6 +41,7 @@ public interface ErrorsResult {
      */
     ApiResultModel DB_ERROR = ResultBuilder.getError(-501, "数据库错误");
     ApiResultModel FILE_ERROR = ResultBuilder.getError(-501, "文件读取异常");
+    ApiResultModel UPLOAD_ERROR = ResultBuilder.getError(-501, "上传失败");
 
     /**
      * -9 未知错误

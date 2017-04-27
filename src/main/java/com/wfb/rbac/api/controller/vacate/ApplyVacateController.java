@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.io.UnsupportedEncodingException;
 import java.util.Date;
 
 @RestController
@@ -30,15 +31,16 @@ public class ApplyVacateController {
                                       @RequestParam(required = true) String type,
                                       @RequestParam(required = true) String descrition,
                                       @RequestParam(required = true) String beginDate,
-                                      @RequestParam(required = true) String endDate){
+                                      @RequestParam(required = true) String endDate) throws UnsupportedEncodingException {
         ApiResultModel resultModel = null;
             VacateEntity vacateEntity = new VacateEntity();
+            vacateEntity.setId(vacateDao.count()+1);
             vacateEntity.setUserId(Integer.parseInt(userId));
             vacateEntity.setCreateAt(new Date());
             vacateEntity.setStatus(1);
             vacateEntity.setPhoneNum(phoneNum);
-            vacateEntity.setType(type);
-            vacateEntity.setDescrition(descrition);
+            vacateEntity.setType(new String(type.getBytes("ISO-8859-1"), "UTF-8"));
+            vacateEntity.setDescrition(new String(descrition.getBytes("ISO-8859-1"), "UTF-8"));
             vacateEntity.setBeginDate(TimeUtils.parseDate(beginDate));
             vacateEntity.setEndDate(TimeUtils.parseDate(endDate));
             if (vacateDao.insert(vacateEntity)){

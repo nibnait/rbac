@@ -121,7 +121,7 @@ userId|String|√|用户id
 ```
 
 ### 批准或驳回项目
-#### URL：/api/vacate/LeaderApproval  /api/vacate/HrApproval
+#### URL：/api/vacate/approval
 #### 请求方式：GET
 #### 参数列表：
 

@@ -16,6 +16,24 @@ public class VacateResultModel {
     private String endDate;
     private String type;
     private Integer days;   //天数
+    private String workNo;
+    private String buName;
+
+    public String getWorkNo() {
+        return workNo;
+    }
+
+    public void setWorkNo(String workNo) {
+        this.workNo = workNo;
+    }
+
+    public String getBuName() {
+        return buName;
+    }
+
+    public void setBuName(String buName) {
+        this.buName = buName;
+    }
 
     public String getUserName() {
         return userName;

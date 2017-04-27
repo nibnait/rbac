@@ -13,6 +13,7 @@ import com.wfb.rbac.db.dao.UserDao;
 import com.wfb.rbac.db.entity.PrivilegeEntity;
 import com.wfb.rbac.db.entity.PrivilegeUserEntity;
 import com.wfb.rbac.db.entity.UserEntity;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -34,15 +35,6 @@ public class UpdateUserInfoController {
 
     @Autowired
     private PrivilegeUserDao privilegeUserDao;
-
-    /**
-     * 上传头像
-     */
-    @RequestMapping("/uploadHeadImage")
-    public ApiResultModel uploadHeadImage(String userId) {
-
-        return null;
-    }
 
     @RequestMapping("/checkPermission")
     public ApiResultModel checkPermission(String userId){
