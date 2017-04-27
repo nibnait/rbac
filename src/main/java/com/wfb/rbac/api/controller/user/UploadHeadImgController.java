@@ -5,6 +5,7 @@ import com.wfb.rbac.common.ErrorsResult;
 import com.wfb.rbac.common.ResultBuilder;
 import com.wfb.rbac.common.models.ApiResultModel;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.util.Base64Utils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -52,6 +53,7 @@ public class UploadHeadImgController {
         try {
             // Base64解码
             byte[] bytes = decoder.decodeBuffer(imgStr);
+//            byte[] bytes = Base64Utils.decodeFromString(imgStr);
             for (int i = 0; i < bytes.length; ++i) {
                 if (bytes[i] < 0) {// 调整异常数据
                     bytes[i] += 256;
@@ -71,6 +73,7 @@ public class UploadHeadImgController {
             out.close();
             return fileName;
         } catch (Exception e) {
+            e.printStackTrace();
             return null;
         }
     }
