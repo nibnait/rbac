@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD//EN"
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!--连接字符串-->
+        <property name="connection.url">jdbc:mysql://127.0.0.1:3306/rbac</property>
+        <!--驱动-->
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        <!--MySQL用户名-->
+        <property name="connection.username">root</property>
+        <!--MySQL密码-->
+        <property name="connection.password">root</property>
+        <!--指定C3P0连接池-->
+        <property name="connection.provider_class">org.hibernate.c3p0.internal.C3P0ConnectionProvider</property>
+        <!--指定MySQL5语法-->
+        <property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
+
+        <!--连接池配置-->
+        <property name="hibernate.c3p0.acquire_increment">5</property>
+        <property name="hibernate.c3p0.idle_test_period">10</property>
+        <property name="hibernate.c3p0.timeout">0</property>
+        <property name="hibernate.c3p0.max_size">20</property>
+        <property name="hibernate.c3p0.max_statements">10</property>
+        <property name="hibernate.c3p0.min_size">5</property>
+        <!--连接池配置-->
+
+        <!-- 添加映射 -->
+        <mapping class="com.wfb.rbac.db.entity.UserEntity"/>
+        <mapping class="com.wfb.rbac.db.entity.DataDicEntity"/>
+        <mapping class="com.wfb.rbac.db.entity.DepartmentEntity"/>
+        <mapping class="com.wfb.rbac.db.entity.PrivilegeEntity"/>
+        <mapping class="com.wfb.rbac.db.entity.PrivilegeUserEntity"/>
+        <mapping class="com.wfb.rbac.db.entity.RoleEntity"/>
+    </session-factory>
+</hibernate-configuration>

@@ -1,0 +1,27 @@
+body{
+	/*background-image: url(../images/3.jpg);
+	background-size: 70px 70px;*/
+}
+.basisType{
+	
+	font-size: 85px;
+	margin-top:8%;
+	border:4px solid grey;
+	border-radius:10px;
+}
+
+.basisType a{
+	text-decoration:none;
+	color:green;
+}
+
+.bottom_type{
+	color:green;
+}
+
+.top{
+	margin-top: 8%;
+}
+
+
+

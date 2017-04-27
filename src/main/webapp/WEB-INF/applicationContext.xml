@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:component-scan base-package="com.wfb.rbac">
+        <context:exclude-filter type="annotation"
+                                expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
+
+    <!--文件上传(Max 20MB, 需要对tomcat & nginx也进行上传文件大小限制修改)-->
+    <bean id="multipartResolver"
+          class="org.springframework.web.multipart.commons.CommonsMultipartResolver"
+          p:defaultEncoding="UTF-8"
+          p:maxUploadSize="20971520"/>
+    <!--文件上传-->
+
+    <!--Hibernate-->
+    <bean id="sessionFactory"
+          class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+        <!--指定hibernate配置文件-->
+        <property name="configLocation"
+                  value="classpath:hibernate.cfg.xml"/>
+        <!--指定hibernate配置文件-->
+
+        <!--指定hibernate entity实体映射类的目录-->
+        <property name="mappingDirectoryLocations">
+            <list>
+                <value>classpath:com/wfb/rbac/db/entity</value>
+            </list>
+        </property>
+        <property name="packagesToScan"
+                  value="com.wfb.rbac.db.entity"/>
+        <!--指定hibernate entity实体映射类的目录-->
+    </bean>
+    <!--Hibernate-->
+
+</beans>
