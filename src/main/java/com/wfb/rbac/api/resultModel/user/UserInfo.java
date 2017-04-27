@@ -18,6 +18,7 @@ public class UserInfo {
     private String image;
     private String phoneNum;
     private String registerTime;    //入职时间
+    private String password;
 
     public Integer getId() {
         return id;
@@ -27,6 +28,13 @@ public class UserInfo {
         this.id = id;
     }
 
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getPassword(){
+        return password;
+    }
     public String getName() {
         return name;
     }

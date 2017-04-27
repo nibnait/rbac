@@ -43,7 +43,7 @@ public class GetUserInfoController {
     private UserInfo convert2UserInfo(UserEntity user) {
         UserInfo userInfo = new UserInfo();
         userInfo.setName(user.getName()==null?"":user.getName());
-        userInfo.setRoleName(user.getRoleName()==null?"":null);
+        userInfo.setRoleName(user.getRoleName()==null?"":user.getRoleName());
         userInfo.setLogName(user.getLogName()==null?"":user.getLogName());
         userInfo.setBirthday(user.getBirthday()==null?"": TimeUtils.getDate(user.getBirthday()));
         userInfo.setWorkNo(user.getWorkNo()==null?"":user.getWorkNo());
@@ -55,6 +55,7 @@ public class GetUserInfoController {
         userInfo.setImage(user.getImage()==null?"":user.getImage());
         userInfo.setPhoneNum(user.getPhoneNum()==null?"":user.getPhoneNum());
         userInfo.setRegisterTime(user.getRegisterTime()==null?"":TimeUtils.getDate(user.getRegisterTime()));
+        userInfo.setPassword(user.getPassword()==null?"":user.getPassword());
         return userInfo;
     }
 

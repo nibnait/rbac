@@ -7,3 +7,5 @@
 #### 登录注册相关：[登录API](doc/login.md)
 
 #### 个人信息相关：[userAPI](doc/user.md)
+
+#### 请假审核相关：[vacateAPI](doc/vacate.md)

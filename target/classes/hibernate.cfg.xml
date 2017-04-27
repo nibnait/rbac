@@ -5,7 +5,7 @@
 <hibernate-configuration>
     <session-factory>
         <!--连接字符串-->
-        <property name="connection.url">jdbc:mysql://127.0.0.1:3306/rbac</property>
+        <property name="connection.url">jdbc:mysql://127.0.0.1:3306/rbac?useSSL=false</property>
         <!--驱动-->
         <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
         <!--MySQL用户名-->
@@ -33,5 +33,6 @@
         <mapping class="com.wfb.rbac.db.entity.PrivilegeEntity"/>
         <mapping class="com.wfb.rbac.db.entity.PrivilegeUserEntity"/>
         <mapping class="com.wfb.rbac.db.entity.RoleEntity"/>
+        <mapping class="com.wfb.rbac.db.entity.VacateEntity"/>
     </session-factory>
 </hibernate-configuration>

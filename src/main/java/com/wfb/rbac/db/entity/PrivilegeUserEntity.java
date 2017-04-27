@@ -15,6 +15,7 @@ public class PrivilegeUserEntity {
     private Integer id;
     private Integer privilegeId;
     private Integer roleId;
+    private Integer buId;
 
     @Id
     public Integer getId() {
@@ -39,5 +40,13 @@ public class PrivilegeUserEntity {
 
     public void setRoleId(Integer roleId) {
         this.roleId = roleId;
+    }
+
+    public Integer getBuId() {
+        return buId;
+    }
+
+    public void setBuId(Integer buId) {
+        this.buId = buId;
     }
 }

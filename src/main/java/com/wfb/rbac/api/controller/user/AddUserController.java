@@ -45,7 +45,7 @@ public class AddUserController {
         ApiResultModel resultModel = null;
         //验证userId是否又权限
         UserEntity user = userDao.findBy("id", Integer.parseInt(userId));
-        if (user.getRoleId() == 1) {
+        if (user.getBuId() == 1) {
             UserEntity userEntity = new UserEntity();
             userEntity.setRegisterTime(new Date());
             userEntity.setName(name);

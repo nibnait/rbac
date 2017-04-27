@@ -50,7 +50,7 @@ public class UpdateUserInfoController {
         if (user != null) {
             UpdatePermissionModel permissionModel = new UpdatePermissionModel();
             Map<String, Integer> permissionMap = new HashMap<>();
-            List<PrivilegeUserEntity> privilegeUserEntities = privilegeUserDao.findAllBy("roleId", user.getRoleId());
+            List<PrivilegeUserEntity> privilegeUserEntities = privilegeUserDao.findAllByRoleAndBu(user.getBuId(), user.getRoleId());
             //先将此角色下的所有权限设为0
             Integer privilegeId = privilegeUserEntities.get(0).getPrivilegeId();
             String pid = privilegeDao.findBy("id", privilegeId).getPid();
