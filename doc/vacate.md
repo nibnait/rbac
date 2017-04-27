@@ -114,9 +114,13 @@ userId|String|√|用户id
       "beginDate": "2017-04-03",
       "endDate": "2017-04-22",
       "type": "事假",
+<<<<<<< HEAD
+      "days": 19
+=======
       "days": 19,
       "workNo":001,
       "buName":"技术部",
+>>>>>>> master
     }
   ]
 }
@@ -140,6 +144,9 @@ vacateId|String|√|假条Id
   "status": 0,
   "msg": "审批完成"
 }
+<<<<<<< HEAD
+```
+=======
 ```
 
 ### 查看我的所有假条的审核进度
@@ -194,3 +201,4 @@ userId|String|√|用户id
   ]
 }
 ```
+>>>>>>> master
