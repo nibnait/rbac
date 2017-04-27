@@ -40,6 +40,7 @@ $(function(){
                         '<tr>'+
                             '<th>'+info[i].name+'</th>'+
                             '<th>'+info[i].buName+'</th>'+
+<<<<<<< HEAD
                             '<th>'+info[i].workNo+'</th>'+
                             '<th>'+info[i].type+'</th>'+
                             '<th>'+info[i].beginDate+'</th>'+
@@ -56,6 +57,19 @@ $(function(){
 
 						}
 						$('table').append(html);
+=======
+                            <th>201</th>
+                            <th>蛋疼</th>
+                            <th>2017-04-10</th>
+                            <th>10</th>
+                            <th>18585515021</th>
+                            <th>真的蛋疼</th>
+                            <th><button type="button" class="btn btn-info btn-xs">同意</button></th>
+                                <th><button type="button" class="btn btn-info btn-xs">反驳</button></th>
+                                </tr>
+
+						}
+>>>>>>> master
 					}
                 },
 				err:function () {

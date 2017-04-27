@@ -42,7 +42,15 @@ $(function(){
 						},
 						success:function (result) {
 							if(result.status ==0)
+<<<<<<< HEAD
+							{
+                                alert(result.msg);
+                                window.location.href="four_modules.html";
+							}
+
+=======
 								alert(result.msg);
+>>>>>>> master
 							else
 								alert('请求失败');
                         }

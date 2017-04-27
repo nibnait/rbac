@@ -114,7 +114,13 @@ userId|String|√|用户id
       "beginDate": "2017-04-03",
       "endDate": "2017-04-22",
       "type": "事假",
+<<<<<<< HEAD
       "days": 19
+=======
+      "days": 19,
+      "workNo":001,
+      "buName":"技术部",
+>>>>>>> master
     }
   ]
 }
@@ -138,4 +144,61 @@ vacateId|String|√|假条Id
   "status": 0,
   "msg": "审批完成"
 }
+<<<<<<< HEAD
 ```
+=======
+```
+
+### 查看我的所有假条的审核进度
+#### URL：/api/vacate/myVacates
+#### 请求方式：GET
+#### 参数列表：
+
+参数名|类型|必选|说明
+-----|---|----|---|
+userId|String|√|用户id
+
+#### 返回示例：
+```
+{
+  "status": 0,
+  "data": [
+    {
+      "userName": "root",
+      "phoneNum": "1",
+      "descrition": "蛋疼？",
+      "createAt": "2017-04-27",
+      "status": "部门经理审核中",
+      "leaderIdea": "",
+      "leaderOperation": 0,
+      "hrIdea": "",
+      "hrOperation": 0,
+      "beginDate": "2017-04-03",
+      "endDate": "2017-04-22",
+      "type": "事假",
+      "days": 19,
+      "workNo":001,
+      "buName":"技术部",
+    },
+
+    {
+      "userName": "root",
+      "phoneNum": "23",
+      "descrition": "啊手动阀",
+      "createAt": "2017-04-27",
+      "status": "部门经理审核中",
+      "leaderIdea": "",
+      "leaderOperation": 0,
+      "hrIdea": "",
+      "hrOperation": 0,
+      "beginDate": "2017-04-01",
+      "endDate": "2017-04-29",
+      "type": "事假",
+      "days": 28,
+      "workNo":001,
+      "buName":"技术部",
+    }
+  ]
+}
+```
+>>>>>>> master
