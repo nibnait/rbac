@@ -212,7 +212,7 @@ $(function(){
             
             $.ajax({
                 type:'GET',
-                url:'/api/user/update',
+                url:'/api/user/updateInfo',
                 dataType:'json',
                 data:{
                     'userId':userId,
@@ -225,10 +225,6 @@ $(function(){
                     'roleName':$('.roleName').val(),
                     'buName':$('.buName').val(),
                     'phoneNum':$('.phoneNum').val(),
-                    'workNo':$('.workNo').val(),
-                    'logName':$('.logName').val(),
-                    'email':$('.email').val(),
-                    'registerTime':$('.registerTime').val(),
                     'password':$('.password').val()
 
                 },
