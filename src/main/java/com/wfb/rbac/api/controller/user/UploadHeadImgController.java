@@ -53,7 +53,6 @@ public class UploadHeadImgController {
         try {
             // Base64解码
             byte[] bytes = decoder.decodeBuffer(imgStr);
-//            byte[] bytes = Base64Utils.decodeFromString(imgStr);
             for (int i = 0; i < bytes.length; ++i) {
                 if (bytes[i] < 0) {// 调整异常数据
                     bytes[i] += 256;
