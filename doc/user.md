@@ -63,7 +63,7 @@ userId|String|√|用户id
 
 
 ### 修改个人信息
-#### URL：/api/user/update
+#### URL：/api/user/updateInfo
 #### 请求方式：GET
 #### 参数列表：
 
