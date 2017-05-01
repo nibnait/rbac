@@ -103,23 +103,31 @@ function initInfo(result){
 
 
     //图片加载
-    var fileBase64 ='';
-     function imgChange(e) {
-        console.info(e.target.files[0]);//图片文件
-        var dom =$("input[id^='imgTest']")[0];
-        console.info(dom.value);//这个是文件的路径 C:\fakepath\icon (5).png
-        console.log(e.target.value);//这个也是文件的路径和上面的dom.value是一样的
-        var reader = new FileReader();
-        reader.onload = (function (file) {
-            return function (e) {
-              // console.info(this.result); //这个就是base64的数据了
-               fileBase64 = this.result;
-                var sss=$("#showImage");
-                $("#showImage")[0].src=this.result;
-            };
-        })(e.target.files[0]);
-        reader.readAsDataURL(e.target.files[0]);
-       }
+
+    function run(input_file,get_data){
+        /*input_file：文件按钮对象*/
+        /*get_data: 转换成功后执行的方法*/
+        if ( typeof(FileReader) === 'undefined' ){
+            alert("抱歉，你的浏览器不支持 FileReader，不能将图片转换为Base64，请使用现代浏览器操作！");
+        } else {
+            try{
+                /*图片转Base64 核心代码*/
+                var file = input_file.files[0];
+                //这里我们判断下类型如果不是图片就返回 去掉就可以上传任意文件
+                if(!/image\/\w+/.test(file.type)){
+                    alert("请确保文件为图像类型");
+                    return false;
+                }
+                var reader = new FileReader();
+                reader.onload = function(){
+                    get_data(this.result);
+                }
+                reader.readAsDataURL(file);
+            }catch (e){
+                alert('图片转Base64出错啦！'+ e.toString())
+            }
+        }
+    }
        
 
 $(function(){
@@ -171,12 +179,20 @@ $(function(){
     })
 
 
+    var fileBase64 ='';
+    $("input[type=file]").change(function () {
+        run(this, function (data) {
+            $('img').attr('src',data);
+            fileBase64 =data.substr(data.indexOf('base64,')+7);
+            console.log(fileBase64);
+        });
+    });
 
     //上传图片
     $('.image').click(function(){
 
         inserImage(fileBase64,userId);
-            
+
     })
       
      // 修改结束后提交信息
@@ -219,13 +235,11 @@ $(function(){
 
                     }
 
-                    else if(result.status ==-202)
-                         alert(result.msg);
                      else
                         alert('修改失败');
                 },
                 err:function(){
-                    console.log('error');
+                    alert('修改失败');
                 }
             })
 
