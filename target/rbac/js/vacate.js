@@ -17,7 +17,7 @@ $(function(){
 	                }
 	                else
 	                {
-	                    alert('获取失败');
+	                    console.log('获取失败');
 	                }
 	            },
 	            err:function () {
@@ -42,19 +42,15 @@ $(function(){
 						},
 						success:function (result) {
 							if(result.status ==0)
-<<<<<<< HEAD
 							{
                                 alert(result.msg);
                                 window.location.href="four_modules.html";
 							}
-
-=======
-								alert(result.msg);
->>>>>>> master
 							else
 								alert('请求失败');
                         }
 					})
+
 
             })
 
