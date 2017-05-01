@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c6778da0-668a-4954-a383-9205cabc9704" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/rbac.war" afterPath="$PROJECT_DIR$/target/rbac.war" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/js/activateAccount.js" afterPath="$PROJECT_DIR$/src/main/webapp/js/activateAccount.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/rbac/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/target/rbac/META-INF/MANIFEST.MF" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/rbac/activateAccount.html" afterPath="$PROJECT_DIR$/target/rbac/activateAccount.html" />
     </list>
     <ignored path="rbac.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -870,12 +866,12 @@
       <workItem from="1493295985072" duration="2486000" />
       <workItem from="1493302382292" duration="715000" />
       <workItem from="1493303341163" duration="13000" />
-      <workItem from="1493303473273" duration="10526000" />
+      <workItem from="1493303473273" duration="10643000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="71593000" />
+    <option name="totallyTimeSpent" value="71710000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="805" extended-state="0" />
