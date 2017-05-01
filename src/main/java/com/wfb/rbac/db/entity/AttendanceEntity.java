@@ -4,6 +4,7 @@ import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 import java.util.Date;
 
@@ -18,6 +19,7 @@ public class AttendanceEntity {
     private Integer userId;
     private Integer checkCount;
 
+    @Id
     public Integer getId() {
         return id;
     }
