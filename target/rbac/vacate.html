@@ -8,6 +8,7 @@
     
      <link rel="stylesheet" type="text/css" href="js/themes/default/easyui.css">
     <link rel="stylesheet" type="text/css" href="js/themes/icon.css">
+    <link rel="stylesheet" type="text/css" href="../js/demo.css">
   
 
 	<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css">
@@ -26,30 +27,27 @@
 </head>
 <body>
 <div class="contailer">
-
+	
 	<div class="row">
 		<div class="col-md-2 col-sm-2"></div>
-		<div class="col-md-8 col-sm-8">
+		<div class="col-md-8">
 			<div class="page-header" style="position:relative;">
-				<h1 style="display: inline-block;">欢迎登入xx公司 <small>请假申请</small></h1>
-				<div style="position: absolute;right: 0;bottom: 0px;">
-					<span>吴方兵</span>
-				</div>
+			  <h1 style="display: inline-block;">欢迎登入xx公司 <small>请假申请</small></h1>
+			  <div style="position: absolute;right: 0;bottom: 0px;">
+				<span>吴方兵</span>		
+			  </div>
 			</div>
-
+		
 			<div class="row">
 				<table class="table table-bordered table-condensed">
-					<tr class="info">
-						<th>个人请假基本信息</th>
-						<th class="text-right">个人请假审核信息</th>
+					<tr>
+						<th class="info"><h4>个人请假基本信息</h4></th>
 					</tr>
 				</table>
-
 			</div>
 
-			<div class="col-md-6 col-sm-6">
-				<div class="row add">
-					<div class="col-md-4 col-sm-4 text-right" >请假类别：</div>
+			<div class="row add">
+					<div class="col-md-5 col-sm-5 text-right">请假类别：</div>
 					<div class="col-md-4 col-sm-4">
 						<select class="type">
 							<option value="请选择">请选择</option>
@@ -64,76 +62,51 @@
 						</select>
 
 					</div>
+					
+			 </div>
 
-				</div>
-
-				<div class="row add">
-					<div class="col-md-4 col-sm-4 text-right">请假开始时间：</div>
+			 <div class="row add">
+					<div class="col-md-5 col-sm-5 text-right">请假开始时间：</div>
 					<div class="col-md-4 col-sm-4">
-						<input class="beginDate" type="date">
+					<input class="beginDate" type="date">
 					</div>
+				 	
+			 </div>
 
-				</div>
 
-
-				<div class="row add">
-					<div class="col-md-4 col-sm-4 text-right">请假结束时间：</div>
+			 <div class="row add">
+					<div class="col-md-5 col-sm-5 text-right">请假结束时间：</div>
 					<div class="col-md-4 col-sm-4">
-						<input class="endDate" type="date">
+					<input class="endDate" type="date">
 					</div>
+				 	
+			 </div>
 
-				</div>
-
-				<div class="row add">
-					<div class="col-md-4 col-sm-4 text-right">请假联系电话：</div>
+			 <div class="row add">
+					<div class="col-md-5 col-sm-5 text-right">请假联系电话：</div>
 					<div class="col-md-4 col-sm-4">
-						<input class="phoneNum" type="text" style="width:157px;">
+					<input class="phoneNum" type="text">
 					</div>
+				 	
+			 </div>
 
-				</div>
-
-				<div class="row add">
-					<div class="col-md-4 col-sm-4 text-right">请假相关说明：</div>
+			 <div class="row add">
+					<div class="col-md-5 col-sm-5 text-right">请假相关说明：</div>
 					<div class="col-md-4 col-sm-4">
-						<textarea class="descrition" style="width:157px;"></textarea>
+					<textarea class="descrition"></textarea>
 					</div>
+				 	
+			 </div>
 
-				</div>
-
-				<div class="row">
-					<div class="col-md-4 col-sm-4 text-right"></div>
-					<div class="col-md-4 col-sm-4 ">
-						<button type="button" class="btn btn-info ">提交申请</button>
+			 <div class="row">
+					<div class="col-md-5 col-sm-5 text-right"></div>
+					<div class="col-md-4 col-sm-4 text-right">
+						  <button type="button" class="btn btn-info btn-lg">提交</button>
 
 					</div>
+				 	
+			 </div>
 
-				</div>
-			</div>
-
-
-			<div class="col-md-6 col-sm-6 text-right">
-				<table class="table table-bordered table-condensed table-hover manpower">
-					<tr class="text-center">
-						<th>姓名</th>
-						<th>请假类型</th>
-						<th>初始时间</th>
-						<th>结束时间</th>
-						<th>请假天数</th>
-						<th>审批状态</th>
-					</tr>
-
-					<tr class="text-center">
-						<td>吴方兵</td>
-						<td>孕假</td>
-						<td>2017-10-07</td>
-						<td>2017-10-09</td>
-						<td>2</td>
-						<td class="danger">经理已审批</td>
-					</tr>
-				</table>
-
-
-			</div>
 
 		</div>
 		<div class="col-md-2 col-sm-2"></div>

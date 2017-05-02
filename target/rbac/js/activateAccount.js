@@ -138,7 +138,7 @@ function initInfo(result){
 $(function(){
 
     var userId = localStorage.getItem("userId");
-    console.log(userId);
+    console.log(typeof(userId));
 
     $.ajax({
         type:'GET',

@@ -82,7 +82,7 @@ public class UpdateUserInfoController {
                                            @RequestParam(required = false) String phoneNum,
                                            @RequestParam(required = false) String roleName,
                                            @RequestParam(required = false) String image){
-        UserEntity user = userDao.findById(userId);
+        UserEntity user = userDao.findBy("id", Integer.parseInt(userId));
         if (user != null) {
             if (name !=null) {
                 user.setName(name);

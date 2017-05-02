@@ -59,7 +59,8 @@ public class UploadHeadImgController {
                 }
             }
             //创建目录
-            imgFilePath = "c://apache-tomcat-7.0.68/webapps/ROOT"+imgFilePath;
+//            imgFilePath = "c://apache-tomcat-7.0.68/webapps/ROOT"+imgFilePath;
+            imgFilePath = "/Users/wufangbing/apps/apache-tomcat-8.5.14/webapps/ROOT"+imgFilePath;
             File file = new File(imgFilePath);
             if (!file.exists()) {
                 file.mkdirs();

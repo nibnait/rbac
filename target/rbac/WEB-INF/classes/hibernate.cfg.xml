@@ -34,5 +34,6 @@
         <mapping class="com.wfb.rbac.db.entity.PrivilegeUserEntity"/>
         <mapping class="com.wfb.rbac.db.entity.RoleEntity"/>
         <mapping class="com.wfb.rbac.db.entity.VacateEntity"/>
+        <mapping class="com.wfb.rbac.db.entity.AttendanceEntity"/>
     </session-factory>
 </hibernate-configuration>
