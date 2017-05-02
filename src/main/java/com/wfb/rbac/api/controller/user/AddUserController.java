@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.io.UnsupportedEncodingException;
 import java.util.Date;
 
 @RestController
@@ -41,24 +42,24 @@ public class AddUserController {
                                    @RequestParam(required = true) String image,
                                    @RequestParam(required = true) String logName,
                                    @RequestParam(required = true) Integer roleId,
-                                   @RequestParam(required = true) Integer buId) {
+                                   @RequestParam(required = true) Integer buId) throws UnsupportedEncodingException {
         ApiResultModel resultModel = null;
         //验证userId是否又权限
         UserEntity user = userDao.findBy("id", Integer.parseInt(userId));
         if (user.getBuId() == 1) {
             UserEntity userEntity = new UserEntity();
             userEntity.setRegisterTime(new Date());
-            userEntity.setName(name);
-            userEntity.setRoleName(roleName);
-            userEntity.setPassword(password);
-            userEntity.setLogName(logName);
-            userEntity.setWorkNo(workNo);
-            userEntity.setEmail(email);
+            userEntity.setName(new String(name.getBytes("iso-8859-1"),"utf-8"));
+            userEntity.setRoleName(new String(roleName.getBytes("iso-8859-1"),"utf-8"));
+            userEntity.setPassword(new String(password.getBytes("iso-8859-1"),"utf-8"));
+            userEntity.setLogName(new String(logName.getBytes("iso-8859-1"),"utf-8"));
+            userEntity.setWorkNo(new String(workNo.getBytes("iso-8859-1"),"utf-8"));
+            userEntity.setEmail(new String(email.getBytes("iso-8859-1"),"utf-8"));
             userEntity.setBirthday(TimeUtils.parseDate(birthday));
-            userEntity.setAddress(address);
-            userEntity.setSex(sex);
-            userEntity.setIdnum(idnum);
-            userEntity.setBuName(buName);
+            userEntity.setAddress(new String(address.getBytes("iso-8859-1"),"utf-8"));
+            userEntity.setSex(new String(sex.getBytes("iso-8859-1"),"utf-8"));
+            userEntity.setIdnum(new String(idnum.getBytes("iso-8859-1"),"utf-8"));
+            userEntity.setBuName(new String(buName.getBytes("iso-8859-1"),"utf-8"));
             userEntity.setRoleId(roleId);
             userEntity.setBuId(buId);
             userEntity.setPhoneNum(phoneNum);

@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -81,38 +82,38 @@ public class UpdateUserInfoController {
                                            @RequestParam(required = false) String buName,
                                            @RequestParam(required = false) String phoneNum,
                                            @RequestParam(required = false) String roleName,
-                                           @RequestParam(required = false) String image){
+                                           @RequestParam(required = false) String image) throws UnsupportedEncodingException {
         UserEntity user = userDao.findBy("id", Integer.parseInt(userId));
         if (user != null) {
             if (name !=null) {
-                user.setName(name);
+                user.setName(new String(name.getBytes("iso-8859-1"),"utf-8"));
             }
             if (password !=null) {
-                user.setPassword(password);
+                user.setPassword(new String(password.getBytes("iso-8859-1"),"utf-8"));
             }
             if (birthday !=null) {
                 user.setBirthday((TimeUtils.parseDate(birthday)));
             }
             if (address != null) {
-                user.setAddress(address);
+                user.setAddress(new String(address.getBytes("iso-8859-1"),"utf-8"));
             }
             if (sex != null) {
-                user.setSex(sex);
+                user.setSex(new String(sex.getBytes("iso-8859-1"),"utf-8"));
             }
             if (idnum != null) {
-                user.setIdnum(idnum);
+                user.setIdnum(new String(idnum.getBytes("iso-8859-1"),"utf-8"));
             }
             if (buName != null) {
-                user.setBuName(buName);
+                user.setBuName(new String(buName.getBytes("iso-8859-1"),"utf-8"));
             }
             if (phoneNum != null) {
-                user.setPhoneNum(phoneNum);
+                user.setPhoneNum(new String(phoneNum.getBytes("iso-8859-1"),"utf-8"));
             }
             if (roleName != null) {
-                user.setRoleName(roleName);
+                user.setRoleName(new String(roleName.getBytes("iso-8859-1"),"utf-8"));
             }
             if (image != null) {
-                user.setImage(image);
+                user.setImage(new String(image.getBytes("iso-8859-1"),"utf-8"));
             }
             userDao.update(user);
             return ResultBuilder.getNoDataSuccess("更新成功");
