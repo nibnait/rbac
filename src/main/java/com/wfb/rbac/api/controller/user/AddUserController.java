@@ -49,17 +49,17 @@ public class AddUserController {
         if (user.getBuId() == 1) {
             UserEntity userEntity = new UserEntity();
             userEntity.setRegisterTime(new Date());
-            userEntity.setName(new String(name.getBytes("iso-8859-1"),"utf-8"));
-            userEntity.setRoleName(new String(roleName.getBytes("iso-8859-1"),"utf-8"));
-            userEntity.setPassword(new String(password.getBytes("iso-8859-1"),"utf-8"));
-            userEntity.setLogName(new String(logName.getBytes("iso-8859-1"),"utf-8"));
-            userEntity.setWorkNo(new String(workNo.getBytes("iso-8859-1"),"utf-8"));
-            userEntity.setEmail(new String(email.getBytes("iso-8859-1"),"utf-8"));
+            userEntity.setName(name);
+            userEntity.setRoleName(roleName);
+            userEntity.setPassword(password);
+            userEntity.setLogName(logName);
+            userEntity.setWorkNo(workNo);
+            userEntity.setEmail(email);
             userEntity.setBirthday(TimeUtils.parseDate(birthday));
-            userEntity.setAddress(new String(address.getBytes("iso-8859-1"),"utf-8"));
-            userEntity.setSex(new String(sex.getBytes("iso-8859-1"),"utf-8"));
-            userEntity.setIdnum(new String(idnum.getBytes("iso-8859-1"),"utf-8"));
-            userEntity.setBuName(new String(buName.getBytes("iso-8859-1"),"utf-8"));
+            userEntity.setAddress(address);
+            userEntity.setSex(sex);
+            userEntity.setIdnum(idnum);
+            userEntity.setBuName(buName);
             userEntity.setRoleId(roleId);
             userEntity.setBuId(buId);
             userEntity.setPhoneNum(phoneNum);

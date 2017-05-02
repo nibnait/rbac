@@ -66,7 +66,12 @@ function initInfo(result){
             for(var i =0;i<arr0.length; i++)
                {
                     if(arr0[i] ==0)
-                     $('.'+arr[i]).attr({'disabled':'disabled'});
+                    {
+                        $('.'+arr[i]).attr({'disabled':'disabled'});
+                        $('.'+arr[i]).css({'background':'#DDDDDD'});
+                    }
+
+
                     
                 }
 
@@ -133,7 +138,7 @@ function initInfo(result){
 $(function(){
 
     var userId = localStorage.getItem("userId");
-    console.log(userId);
+    console.log(typeof(userId));
 
     $.ajax({
         type:'GET',
@@ -207,23 +212,19 @@ $(function(){
             
             $.ajax({
                 type:'GET',
-                url:'/api/user/update',
+                url:'/api/user/updateInfo',
                 dataType:'json',
                 data:{
                     'userId':userId,
                     'image':imgSrc,
                     'name':$('.name').val(),
-                    'logName':$('.logName').val(),
-                    'email':$('.email').val(),
                     'sex':sex,
                     'birthday':$('.birthday').val(),
                     'address':$('.address').val(),
                     'idnum':$('.idnum').val(),
-                    'workNo':$('.workNo').val(),
                     'roleName':$('.roleName').val(),
                     'buName':$('.buName').val(),
                     'phoneNum':$('.phoneNum').val(),
-                    'registerTime':$('.registerTime').val(),
                     'password':$('.password').val()
 
                 },

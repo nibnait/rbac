@@ -5,7 +5,7 @@
 <hibernate-configuration>
     <session-factory>
         <!--连接字符串-->
-        <property name="connection.url">jdbc:mysql://127.0.0.1:3306/rbac?useSSL=false</property>
+        <property name="connection.url">jdbc:mysql://127.0.0.1:3306/rbac?useUnicode=true&amp;characterEncoding=UTF8</property>
         <!--驱动-->
         <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
         <!--MySQL用户名-->
