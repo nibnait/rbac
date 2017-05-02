@@ -67,7 +67,8 @@ public class UploadHeadImgController {
             }
             String fileName = UUID.randomUUID().toString().replace("-","")+".jpg";
             // 生成jpeg图片
-            OutputStream out = new FileOutputStream(imgFilePath+"\\"+fileName);
+//            OutputStream out = new FileOutputStream(imgFilePath+"\\"+fileName);
+            OutputStream out = new FileOutputStream(imgFilePath+"/"+fileName);
             out.write(bytes);
             out.flush();
             out.close();
