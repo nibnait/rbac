@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -81,7 +82,7 @@ public class UpdateUserInfoController {
                                            @RequestParam(required = false) String buName,
                                            @RequestParam(required = false) String phoneNum,
                                            @RequestParam(required = false) String roleName,
-                                           @RequestParam(required = false) String image){
+                                           @RequestParam(required = false) String image) throws UnsupportedEncodingException {
         UserEntity user = userDao.findBy("id", Integer.parseInt(userId));
         if (user != null) {
             if (name !=null) {

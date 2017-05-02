@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.io.UnsupportedEncodingException;
 import java.util.Date;
 
 @RestController
@@ -41,7 +42,7 @@ public class AddUserController {
                                    @RequestParam(required = true) String image,
                                    @RequestParam(required = true) String logName,
                                    @RequestParam(required = true) Integer roleId,
-                                   @RequestParam(required = true) Integer buId) {
+                                   @RequestParam(required = true) Integer buId) throws UnsupportedEncodingException {
         ApiResultModel resultModel = null;
         //验证userId是否又权限
         UserEntity user = userDao.findBy("id", Integer.parseInt(userId));
