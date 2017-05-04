@@ -9,3 +9,5 @@
 #### 个人信息相关：[userAPI](doc/user.md)
 
 #### 请假审核相关：[vacateAPI](doc/vacate.md)
+
+#### 签到模块：[attendanceAPI](doc/attendance.md)

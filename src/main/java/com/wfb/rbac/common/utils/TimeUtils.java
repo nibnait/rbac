@@ -2,6 +2,8 @@ package com.wfb.rbac.common.utils;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.Locale;
 
@@ -105,5 +107,9 @@ public class TimeUtils {
 
     public static int getDurationSecond(long date1, long date2) {
         return (int) Math.abs((date1 - date2) / SECOND_MILLISECONDS);
+    }
+
+    public static int getLengthOfMonth(){
+        return LocalDate.now().lengthOfMonth();
     }
 }

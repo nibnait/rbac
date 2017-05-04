@@ -47,6 +47,7 @@ public class GetAllContact {
 
     private UserInfo convert2UserInfo(UserEntity user) {
         UserInfo userInfo = new UserInfo();
+        userInfo.setId(user.getId());
         userInfo.setName(user.getName()==null?"":user.getName());
         userInfo.setRoleName(user.getRoleName()==null?"":user.getRoleName());
         userInfo.setLogName(user.getLogName()==null?"":user.getLogName());

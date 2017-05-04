@@ -39,8 +39,8 @@ public class ApplyVacateController {
             vacateEntity.setCreateAt(new Date());
             vacateEntity.setStatus(1);
             vacateEntity.setPhoneNum(phoneNum);
-            vacateEntity.setType(new String(type.getBytes("ISO-8859-1"), "UTF-8"));
-            vacateEntity.setDescrition(new String(descrition.getBytes("ISO-8859-1"), "UTF-8"));
+            vacateEntity.setType(type);
+            vacateEntity.setDescrition(descrition);
             vacateEntity.setBeginDate(TimeUtils.parseDate(beginDate));
             vacateEntity.setEndDate(TimeUtils.parseDate(endDate));
             if (vacateDao.insert(vacateEntity)){

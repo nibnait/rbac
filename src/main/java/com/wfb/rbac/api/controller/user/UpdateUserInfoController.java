@@ -86,34 +86,34 @@ public class UpdateUserInfoController {
         UserEntity user = userDao.findBy("id", Integer.parseInt(userId));
         if (user != null) {
             if (name !=null) {
-                user.setName(new String(name.getBytes("iso-8859-1"),"utf-8"));
+                user.setName(name);
             }
             if (password !=null) {
-                user.setPassword(new String(password.getBytes("iso-8859-1"),"utf-8"));
+                user.setPassword(password);
             }
             if (birthday !=null) {
                 user.setBirthday((TimeUtils.parseDate(birthday)));
             }
             if (address != null) {
-                user.setAddress(new String(address.getBytes("iso-8859-1"),"utf-8"));
+                user.setAddress(address);
             }
             if (sex != null) {
-                user.setSex(new String(sex.getBytes("iso-8859-1"),"utf-8"));
+                user.setSex(sex);
             }
             if (idnum != null) {
-                user.setIdnum(new String(idnum.getBytes("iso-8859-1"),"utf-8"));
+                user.setIdnum(idnum);
             }
             if (buName != null) {
-                user.setBuName(new String(buName.getBytes("iso-8859-1"),"utf-8"));
+                user.setBuName(buName);
             }
             if (phoneNum != null) {
-                user.setPhoneNum(new String(phoneNum.getBytes("iso-8859-1"),"utf-8"));
+                user.setPhoneNum(phoneNum);
             }
             if (roleName != null) {
-                user.setRoleName(new String(roleName.getBytes("iso-8859-1"),"utf-8"));
+                user.setRoleName(roleName);
             }
             if (image != null) {
-                user.setImage(new String(image.getBytes("iso-8859-1"),"utf-8"));
+                user.setImage(image);
             }
             userDao.update(user);
             return ResultBuilder.getNoDataSuccess("更新成功");

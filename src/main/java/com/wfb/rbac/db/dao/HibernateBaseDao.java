@@ -20,7 +20,7 @@ public class HibernateBaseDao<T>{
     protected static final String SELECT_HQL = "from %s obj where obj.%s=:para";
     protected static final String SELECT_ALL_HQL = "from %s obj";
     protected static SessionFactory sessionFactory;
-    protected static Session session;
+//    protected static Session session;
     protected String TableName;
     protected String IdFieldName;
 
@@ -35,13 +35,13 @@ public class HibernateBaseDao<T>{
      */
     public HibernateBaseDao(Class tableName, String idFieldName){
         getSessionFactory();
-        session = sessionFactory.openSession();
+        Session session = sessionFactory.openSession();
         TableName = tableName.getSimpleName();
         IdFieldName = idFieldName;
     }
 
     public boolean insert(T entity) {
-        ensureSession();
+        Session session = ensureSession();
         if (entity == null) {
             return false;
         }
@@ -58,7 +58,7 @@ public class HibernateBaseDao<T>{
     }
 
     public boolean update(T entity) {
-        ensureSession();
+        Session session = ensureSession();
         if (entity == null) {
             return false;
         }
@@ -75,7 +75,7 @@ public class HibernateBaseDao<T>{
     }
 
     public void delete(T entity) {
-        ensureSession();
+        Session session = ensureSession();
         if (entity == null) {
             return;
         }
@@ -85,7 +85,7 @@ public class HibernateBaseDao<T>{
 
     @SuppressWarnings("unchecked")
     public T findBy(String field, Object param) {
-        ensureSession();
+        Session session = ensureSession();
         if (param == null) {
             return null;
         }
@@ -108,7 +108,7 @@ public class HibernateBaseDao<T>{
 
     @SuppressWarnings("unchecked")
     public List<T> findAllBy(String field, Object param) {
-        ensureSession();
+        Session session = ensureSession();
         if (param == null) {
             return null;
         }
@@ -121,7 +121,7 @@ public class HibernateBaseDao<T>{
             e.printStackTrace();
             return null;
         } finally {
-            session.close();
+            //session.close();
         }
         if (null == result) {
             return null;
@@ -142,7 +142,7 @@ public class HibernateBaseDao<T>{
     }
 
     protected List findAllWithQuery(PageModel page, Query query, Object... params) {
-        ensureSession();
+        Session session = ensureSession();
         List list;
         try {
             if (page != null) {
@@ -163,7 +163,7 @@ public class HibernateBaseDao<T>{
     }
 
     protected List findAllWithQuery(PageModel page, Query query, Map<String, Object> params) {
-        ensureSession();
+        Session session = ensureSession();
         List list;
         try {
             if (page != null) {
@@ -184,7 +184,7 @@ public class HibernateBaseDao<T>{
     }
 
     protected List findAllBase(PageModel page, String condition) {
-        ensureSession();
+        Session session = ensureSession();
         List list;
         try {
             StringBuilder builder = new StringBuilder();
@@ -209,13 +209,14 @@ public class HibernateBaseDao<T>{
     }
 
     public int count() {
-        ensureSession();
+        Session session = ensureSession();
         String hql = "select count(*) from %s";
         Query query = session.createQuery(String.format(hql, TableName));
         return ((Long) query.uniqueResult()).intValue();
     }
 
     private void doTransaction() {
+        Session session = ensureSession();
         Transaction transaction = session.beginTransaction();
         try {
             transaction.commit();
@@ -225,11 +226,11 @@ public class HibernateBaseDao<T>{
         }
     }
 
-    protected void ensureSession(){
+    protected Session ensureSession(){
         if (sessionFactory ==null || sessionFactory.isClosed()){
             getSessionFactory();
         }
-        session = sessionFactory.openSession();
+        return sessionFactory.openSession();
     }
 
     public void getSessionFactory(){

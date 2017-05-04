@@ -123,7 +123,7 @@ userId|String|√|用户id
 ```
 
 ### 批准或驳回项目
-#### URL：/api/vacate/approval
+#### URL：/api/vacate/LeaderApproval
 #### 请求方式：GET
 #### 参数列表：
 
